@@ -28,6 +28,7 @@ public class UnitSelections : MonoBehaviour
     {
         DeselectAll();
         unitSelected.Add(unitToAdd);
+        unitToAdd.GetComponent<UnitMovment>().enabled = true;
     }
 
     public void ShiftClickSelect(GameObject unitToAdd)
@@ -35,6 +36,7 @@ public class UnitSelections : MonoBehaviour
         if (!unitSelected.Contains(unitToAdd))
         {
             unitSelected.Add(unitToAdd);
+            unitToAdd.GetComponent<UnitMovment>().enabled = true;
         }
         else
         {
@@ -49,6 +51,10 @@ public class UnitSelections : MonoBehaviour
 
     public void DeselectAll()
     {
+        foreach (var unit in unitSelected)
+        {
+            unit.GetComponent<UnitMovment>().enabled = false;
+        }
         unitSelected.Clear();
     }
 
