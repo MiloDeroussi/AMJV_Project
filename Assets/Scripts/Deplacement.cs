@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Deplacement : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class Deplacement : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit))
             {
-                selected.transform.position = hit.point + Vector3.up * selected.transform.position.y;
+                selected.GetComponent<NavMeshAgent>().SetDestination(hit.point);
             }
         }
     }
