@@ -19,6 +19,10 @@ public class UnitControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if ((myAgent.destination - myAgent.nextPosition).magnitude < 2 && myAgent.velocity.magnitude < 1)
+        {
+            myAgent.SetDestination(myAgent.nextPosition);
+        }
         if (Input.GetMouseButtonDown(1))
         {
             RaycastHit hit;
