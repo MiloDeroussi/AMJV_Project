@@ -28,6 +28,7 @@ public class UnitSelections : MonoBehaviour
     {
         DeselectAll();
         unitSelected.Add(unitToAdd);
+        unitToAdd.transform.GetChild(0).gameObject.SetActive(true);
         unitToAdd.GetComponent<UnitMovment>().enabled = true;
     }
 
@@ -36,17 +37,24 @@ public class UnitSelections : MonoBehaviour
         if (!unitSelected.Contains(unitToAdd))
         {
             unitSelected.Add(unitToAdd);
+            unitToAdd.transform.GetChild(0).gameObject.SetActive(true);
             unitToAdd.GetComponent<UnitMovment>().enabled = true;
         }
         else
         {
             unitSelected.Remove(unitToAdd);
+            unitToAdd.transform.GetChild(0).gameObject.SetActive(false);
         }
     }
 
     public void DragSelect(GameObject unitToAdd)
     {
-
+        if(!unitSelected.Contains(unitToAdd))
+        {
+            unitSelected.Add(unitToAdd);
+            unitToAdd.transform.GetChild(0).gameObject.SetActive(true);
+            unitToAdd.GetComponent<UnitMovment>().enabled = true;
+        }
     }
 
     public void DeselectAll()
@@ -54,6 +62,7 @@ public class UnitSelections : MonoBehaviour
         foreach (var unit in unitSelected)
         {
             unit.GetComponent<UnitMovment>().enabled = false;
+            unit.transform.GetChild(0).gameObject.SetActive(false);
         }
         unitSelected.Clear();
     }
