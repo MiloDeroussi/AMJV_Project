@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class IdleState : UnitBaseState
 {
-    public IdleState(UnitStateMachine usm) : base(usm)
+    private float detectionRange;
+
+    
+    public IdleState(EUnitStateMachine usm) : base(usm)
     { 
     }
     public override void Enter()
@@ -14,7 +17,7 @@ public class IdleState : UnitBaseState
 
     public override void Update()
     {
-        Debug.Log("doing nothing zzz");
+        Debug.Log("Waiting for order");
     }
 
     public override void Exit()

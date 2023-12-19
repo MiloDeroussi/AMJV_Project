@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CapacitingState : UnitBaseState
 {
-    public CapacitingState(UnitStateMachine usm) : base(usm)
+    public CapacitingState(EUnitStateMachine usm) : base(usm)
     {
     }
     public override void Enter()

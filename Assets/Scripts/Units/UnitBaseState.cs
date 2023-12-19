@@ -4,9 +4,9 @@ using UnityEngine;
 
 public abstract class UnitBaseState
 {
-    protected UnitStateMachine usm;
+    protected EUnitStateMachine usm;
 
-    public UnitBaseState(UnitStateMachine usm)
+    public UnitBaseState(EUnitStateMachine usm)
     {
         this.usm = usm;
     }

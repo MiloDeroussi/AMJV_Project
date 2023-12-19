@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PatrollingState : UnitBaseState
 {
-    public PatrollingState(UnitStateMachine usm) : base(usm)
+    public PatrollingState(EUnitStateMachine usm) : base(usm)
     {
     }
     public override void Enter()

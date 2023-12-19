@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AttackingState : UnitBaseState
 {
-    public AttackingState(UnitStateMachine usm) : base(usm)
+    public AttackingState(EUnitStateMachine usm) : base(usm)
     {
     }
     public override void Enter()
