@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 5600271546101956675}
   - component: {fileID: 4712621399908271836}
   - component: {fileID: 6490081877801751693}
-  - component: {fileID: 918871344784933628}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: SelectionMarker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,28 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &918871344784933628
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5573042544576204953}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &8487588377935248417
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,7 +94,7 @@ GameObject:
   - component: {fileID: 1566082108021084616}
   - component: {fileID: 254359815674900418}
   - component: {fileID: 5882936079118108572}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +179,7 @@ GameObject:
   - component: {fileID: 141792491246244114}
   - component: {fileID: 649859706373201599}
   - component: {fileID: 4515982646346756601}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Archeduc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -274,10 +251,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ground:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1024
   ennemy:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 4096
 --- !u!136 &4515982646346756601
 CapsuleCollider:
   m_ObjectHideFlags: 0

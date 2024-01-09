@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3519095894450946987}
   - component: {fileID: 5150483340007912031}
   - component: {fileID: 3193507736363812327}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Minotaupe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,10 +85,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ground:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1024
   ennemy:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 4096
 --- !u!135 &3193507736363812327
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 9198826781864919746}
   - component: {fileID: 4768644310639099096}
   - component: {fileID: 730849322658534018}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,8 +204,7 @@ GameObject:
   - component: {fileID: 3774240852995335449}
   - component: {fileID: 1704695612137159718}
   - component: {fileID: 2965791802704598783}
-  - component: {fileID: 601691981179573642}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: SelectionMarker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,25 +276,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &601691981179573642
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5984127547458390968}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}

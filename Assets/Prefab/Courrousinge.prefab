@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6638229640503323887}
   - component: {fileID: 9185754590130091326}
   - component: {fileID: 861638887322808709}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Courrousinge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,10 +85,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ground:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1024
   ennemy:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 4096
 --- !u!135 &861638887322808709
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -121,8 +121,7 @@ GameObject:
   - component: {fileID: 8069450217638704027}
   - component: {fileID: 3823737890271982555}
   - component: {fileID: 3151720026405001005}
-  - component: {fileID: 7912986900109125603}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: SelectionMarker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,28 +193,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7912986900109125603
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1623290956779087533}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &8027774755325092836
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,7 +204,7 @@ GameObject:
   - component: {fileID: 947085328881232558}
   - component: {fileID: 1955682028566996466}
   - component: {fileID: 6241161316503255297}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}

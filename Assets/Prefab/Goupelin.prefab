@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 2573589516654913331}
   - component: {fileID: 8569334735318975559}
   - component: {fileID: 461586808505894401}
-  - component: {fileID: 3413145775976049903}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: SelectionMarker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,28 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3413145775976049903
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1434843994118648562}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &3591250685097674649
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,7 +96,7 @@ GameObject:
   - component: {fileID: 5564511028509657671}
   - component: {fileID: 511346575427860394}
   - component: {fileID: 5524738840787121812}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Goupelin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,10 +168,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ground:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1024
   ennemy:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 4096
 --- !u!136 &5524738840787121812
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -229,7 +206,7 @@ GameObject:
   - component: {fileID: 2638517316787843053}
   - component: {fileID: 6455617203886893226}
   - component: {fileID: 607507183134555703}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}

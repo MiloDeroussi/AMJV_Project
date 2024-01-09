@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8565890639156665366}
   - component: {fileID: 3552458489659730775}
   - component: {fileID: 4912164982193440505}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,8 +94,7 @@ GameObject:
   - component: {fileID: 8118434802206245746}
   - component: {fileID: 7936041708054803532}
   - component: {fileID: 5767126146712521804}
-  - component: {fileID: 4047120264358701357}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: SelectionMarker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,28 +166,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4047120264358701357
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4975303064291975069}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &5670918359837201599
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,7 +179,7 @@ GameObject:
   - component: {fileID: 5106663705158290608}
   - component: {fileID: 4041810231215732396}
   - component: {fileID: 1970265698608904032}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Steelix
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ground:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1024
   ennemy:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 4096

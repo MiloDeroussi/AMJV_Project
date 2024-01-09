@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1203987983172767609}
   - component: {fileID: 2008093951486520663}
   - component: {fileID: 440753240884033729}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Momartik
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,10 +85,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ground:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1024
   ennemy:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 4096
 --- !u!136 &440753240884033729
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 7434955905579260006}
   - component: {fileID: 572845107075486253}
   - component: {fileID: 7718403060654710301}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,8 +206,7 @@ GameObject:
   - component: {fileID: 5488287149136761313}
   - component: {fileID: 3577391253944261696}
   - component: {fileID: 6871233610457872579}
-  - component: {fileID: 2503046980713733692}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: SelectionMarker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,25 +278,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2503046980713733692
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3331642104612557330}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}

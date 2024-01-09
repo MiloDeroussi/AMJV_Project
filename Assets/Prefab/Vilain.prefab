@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 442838171253405013}
   - component: {fileID: 5019552774829249193}
   - component: {fileID: 5168034194307018312}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Vilain
   m_TagString: Untagged
   m_Icon: {fileID: 0}

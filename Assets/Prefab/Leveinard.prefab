@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 449799194239437490}
   - component: {fileID: 7178796336367180202}
   - component: {fileID: 1768877494011088764}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Leveinard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,10 +85,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ground:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1024
   ennemy:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 4096
 --- !u!135 &1768877494011088764
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -121,8 +121,7 @@ GameObject:
   - component: {fileID: 7227629216613183632}
   - component: {fileID: 3290554881765236848}
   - component: {fileID: 1179062776841314290}
-  - component: {fileID: 4892665972259573035}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: SelectionMarker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,28 +193,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4892665972259573035
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6831226751623251576}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &8610016348625768914
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,7 +204,7 @@ GameObject:
   - component: {fileID: 2368636480185258609}
   - component: {fileID: 6050490109691074719}
   - component: {fileID: 8147951093116074192}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}

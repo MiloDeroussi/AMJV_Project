@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2062669588591085916}
   - component: {fileID: 1261858022089062478}
   - component: {fileID: 7474889447728968219}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 6714019372574179483}
   - component: {fileID: 4679527037055585543}
   - component: {fileID: 3672286956300484506}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: Ronflex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,10 +168,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ground:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1024
   ennemy:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 4096
 --- !u!135 &3672286956300484506
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -204,8 +204,7 @@ GameObject:
   - component: {fileID: 3995957360346659991}
   - component: {fileID: 8247296158675862003}
   - component: {fileID: 1387419894886348976}
-  - component: {fileID: 8495910102081130607}
-  m_Layer: 7
+  m_Layer: 11
   m_Name: SelectionMarker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,25 +276,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8495910102081130607
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9189195922048323331}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
