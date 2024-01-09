@@ -25,5 +25,6 @@ public class KingManager : MonoBehaviour
     public void setKing(GameObject king)
     {
         this.king = king;
+        king.transform.GetChild(1).gameObject.SetActive(true);
     }
 }
