@@ -72,10 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d858f0d96aa9d14480791e2ae1d7c84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unit:
-    serializedVersion: 2
-    m_Bits: 2048
-  kingManager: {fileID: 0}
+  kingManager: {fileID: 7241772837043383554, guid: c62fa314ca9273a47a2721cf958b8f88, type: 3}
 --- !u!54 &3735674469438516118
 Rigidbody:
   m_ObjectHideFlags: 0

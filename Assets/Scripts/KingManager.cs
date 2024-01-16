@@ -14,7 +14,10 @@ public class KingManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (king.GetComponent<Health>().getHealth() == 0)
+        {
+            Debug.Log("C'est perdu");
+        }
     }
 
     public GameObject getKing()

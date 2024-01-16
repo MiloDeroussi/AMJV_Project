@@ -552,6 +552,7 @@ GameObject:
   - component: {fileID: 388284751057554797}
   - component: {fileID: 8104362157878805454}
   - component: {fileID: 6056576875142498091}
+  - component: {fileID: 4047244445083389267}
   m_Layer: 11
   m_Name: Ectoplasma
   m_TagString: Untagged
@@ -666,6 +667,21 @@ MonoBehaviour:
   maxHealth: 12
   currentHealth: 12
   healthBar: {fileID: 656084495902469421}
+--- !u!114 &4047244445083389267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5998998951588062480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c780bd72e6ee84b94f1914a943ce1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ground:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!1 &6112740809362978992
 GameObject:
   m_ObjectHideFlags: 0
