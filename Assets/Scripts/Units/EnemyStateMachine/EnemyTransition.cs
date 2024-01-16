@@ -14,6 +14,7 @@ public class EnemyTransition : Transition
     public bool isOnCooldown;
 
     private GameObject unit;
+    private Health health;
     private Transform uTransform;
     private Vector3 initialPosition;
 
@@ -53,6 +54,7 @@ public class EnemyTransition : Transition
         unit = this.gameObject;
         uTransform = unit.transform;
         initialPosition = uTransform.position;
+        health = GetComponent<Health>();
 
         stateMachine.attackTarget = null;
         agent = this.GetComponent<NavMeshAgent>();
@@ -102,6 +104,7 @@ public class EnemyTransition : Transition
             }
 
             ToRegicing();
+            ToDeath();
         }
         else
         {
@@ -113,6 +116,14 @@ public class EnemyTransition : Transition
             {
                 RegicingAttackingToRegicingMoving();
             }
+        }
+    }
+
+    void ToDeath()
+    {
+        if (health.getHealth() <= 0)
+        {
+            this.gameObject.SetActive(false);
         }
     }
 
