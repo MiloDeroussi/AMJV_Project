@@ -13,12 +13,17 @@ public class PatrollingState : UnitBaseState
     }
 
     public override void Update()
-    {
-
+    { 
+        if (!usm.isPatrolling)
+        {
+            
+            usm.isPatrolling = true;
+            usm.StartCoroutine(usm.PatrolNewPath());
+        }
     }
 
     public override void Exit()
     {
-
+        usm.isPatrolling = false;
     }
 }

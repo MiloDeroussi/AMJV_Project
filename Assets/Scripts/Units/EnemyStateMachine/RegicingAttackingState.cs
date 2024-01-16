@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CapacitingState : UnitBaseState
+public class RegicingAttackingState : UnitBaseState
 {
-    public CapacitingState(EUnitStateMachine usm) : base(usm)
+    public RegicingAttackingState(EUnitStateMachine usm) : base(usm)
     {
     }
     public override void Enter()
     {
-
+        usm.agent.isStopped = true;
     }
 
     public override void Update()
@@ -19,6 +19,6 @@ public class CapacitingState : UnitBaseState
 
     public override void Exit()
     {
-
+        usm.agent.isStopped = false;
     }
 }

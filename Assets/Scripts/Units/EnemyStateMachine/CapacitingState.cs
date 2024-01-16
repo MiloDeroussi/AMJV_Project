@@ -2,23 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackingState : UnitBaseState
+public class CapacitingState : UnitBaseState
 {
-    public AttackingState(EUnitStateMachine usm) : base(usm)
+    public CapacitingState(EUnitStateMachine usm) : base(usm)
     {
     }
     public override void Enter()
     {
-        Debug.Log("Comming to war");
+        usm.agent.isStopped = true;
     }
 
     public override void Update()
     {
-        Debug.Log("Target under fire");
+
     }
 
     public override void Exit()
     {
-        Debug.Log("oh peace ?");
+        usm.agent.isStopped = false;
     }
 }
