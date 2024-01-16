@@ -32,11 +32,16 @@ public class Health : MonoBehaviour
 
     public void damage(float damage)
     {
-        currentHealth = Mathf.Min(currentHealth - damage, 0);
+        currentHealth = Mathf.Max(currentHealth - damage, 0);
     }
 
     public void heal(float heal)
     {
-        currentHealth = Mathf.Max(currentHealth + heal, maxHealth);
+        currentHealth = Mathf.Min(currentHealth + heal, maxHealth);
+    }
+
+    public float getHealth()
+    {
+        return currentHealth;
     }
 }

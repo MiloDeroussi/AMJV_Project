@@ -7,6 +7,7 @@ public class UnitControl : MonoBehaviour
 {
     Camera myCam;
     NavMeshAgent myAgent;
+    Pokemon pokemon;
     public LayerMask ground;
     public LayerMask ennemy;
     // Start is called before the first frame update
@@ -14,6 +15,12 @@ public class UnitControl : MonoBehaviour
     {
         myCam = Camera.main;
         myAgent = GetComponent<NavMeshAgent>();
+
+        if (gameObject.name == "Ectoplasma")
+        {
+            Debug.Log(gameObject.name);
+            pokemon = GetComponent<Ectoplasma>();
+        }
     }
 
     // Update is called once per frame
@@ -31,6 +38,7 @@ public class UnitControl : MonoBehaviour
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, ennemy))
             {
                 Debug.Log("J'attaque " + hit.collider.gameObject.name+" !");
+                pokemon.Attack(hit.collider.gameObject);
             }
 
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, ground))
@@ -42,6 +50,7 @@ public class UnitControl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C))
         {
             Debug.Log("J'utilise ma capacité !");
+            pokemon.Capacity();
         }
     }
 }
