@@ -551,6 +551,7 @@ GameObject:
   - component: {fileID: 1367969772880985132}
   - component: {fileID: 388284751057554797}
   - component: {fileID: 8104362157878805454}
+  - component: {fileID: 6056576875142498091}
   m_Layer: 11
   m_Name: Ectoplasma
   m_TagString: Untagged
@@ -573,6 +574,7 @@ Transform:
   m_Children:
   - {fileID: 6115735591436054072}
   - {fileID: 2690251820589675100}
+  - {fileID: 1531391524533555712}
   - {fileID: 5035994134199276050}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -649,6 +651,21 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.75
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6056576875142498091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5998998951588062480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e5d026da01d27b43854b3ef569f95c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 12
+  currentHealth: 12
+  healthBar: {fileID: 656084495902469421}
 --- !u!1 &6112740809362978992
 GameObject:
   m_ObjectHideFlags: 0
@@ -1064,3 +1081,70 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1001 &1272799993948021184
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4280605027027923858}
+    m_Modifications:
+    - target: {fileID: 353951087440032704, guid: 78a606d602621cc47873e7ff7e1f418c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 353951087440032704, guid: 78a606d602621cc47873e7ff7e1f418c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 353951087440032704, guid: 78a606d602621cc47873e7ff7e1f418c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 353951087440032704, guid: 78a606d602621cc47873e7ff7e1f418c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 353951087440032704, guid: 78a606d602621cc47873e7ff7e1f418c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 353951087440032704, guid: 78a606d602621cc47873e7ff7e1f418c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 353951087440032704, guid: 78a606d602621cc47873e7ff7e1f418c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 353951087440032704, guid: 78a606d602621cc47873e7ff7e1f418c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 353951087440032704, guid: 78a606d602621cc47873e7ff7e1f418c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 353951087440032704, guid: 78a606d602621cc47873e7ff7e1f418c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779772353736887533, guid: 78a606d602621cc47873e7ff7e1f418c, type: 3}
+      propertyPath: m_Name
+      value: HealthBar
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 78a606d602621cc47873e7ff7e1f418c, type: 3}
+--- !u!1 &656084495902469421 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1779772353736887533, guid: 78a606d602621cc47873e7ff7e1f418c, type: 3}
+  m_PrefabInstance: {fileID: 1272799993948021184}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1531391524533555712 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 353951087440032704, guid: 78a606d602621cc47873e7ff7e1f418c, type: 3}
+  m_PrefabInstance: {fileID: 1272799993948021184}
+  m_PrefabAsset: {fileID: 0}
