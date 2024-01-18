@@ -16,11 +16,7 @@ public class UnitControl : MonoBehaviour
         myCam = Camera.main;
         myAgent = GetComponent<NavMeshAgent>();
 
-        if (gameObject.name == "Ectoplasma")
-        {
-            Debug.Log(gameObject.name);
-            pokemon = GetComponent<Ectoplasma>();
-        }
+        pokemon = GetComponent<Pokemon>();
     }
 
     // Update is called once per frame
@@ -49,8 +45,14 @@ public class UnitControl : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.C))
         {
-            Debug.Log("J'utilise ma capacité !");
-            pokemon.Capacity();
+            RaycastHit hit;
+            Ray ray = myCam.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+            {
+                Debug.Log("J'utilise ma capacité !");
+                pokemon.Capacity(hit.collider.gameObject);
+            }
         }
     }
 }

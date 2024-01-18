@@ -553,6 +553,7 @@ GameObject:
   - component: {fileID: 8104362157878805454}
   - component: {fileID: 6056576875142498091}
   - component: {fileID: 4047244445083389267}
+  - component: {fileID: 3555645652766479943}
   m_Layer: 11
   m_Name: Ectoplasma
   m_TagString: Untagged
@@ -666,6 +667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 12
   currentHealth: 12
+  defense: 0
   healthBar: {fileID: 656084495902469421}
 --- !u!114 &4047244445083389267
 MonoBehaviour:
@@ -682,6 +684,41 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 1024
+  targets:
+    serializedVersion: 2
+    m_Bits: 4096
+  attackRange: 0
+  detectRange: 0
+  capacityCd: 0
+  attackCd: 1
+  capacityDuration: 0
+--- !u!54 &3555645652766479943
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5998998951588062480}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 1
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
 --- !u!1 &6112740809362978992
 GameObject:
   m_ObjectHideFlags: 0

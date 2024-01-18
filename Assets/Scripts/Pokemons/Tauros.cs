@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Ectoplasma : Pokemon
+public class Tauros : Pokemon
 {
     NavMeshAgent myAgent;
     Camera myCam;
     public LayerMask ground;
     public LayerMask targets;
     private bool isOnCooldown;
+    private float damage;
+    private float maxHealth;
     [SerializeField] float attackRange;
     [SerializeField] float detectRange;
     [SerializeField] float capacityCd;
@@ -21,12 +23,13 @@ public class Ectoplasma : Pokemon
         myAgent = GetComponent<NavMeshAgent>();
         myCam = Camera.main;
         isOnCooldown = false;
+        maxHealth = GetComponent<Health>().getHealth();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public override void Attack(GameObject target)
@@ -34,28 +37,26 @@ public class Ectoplasma : Pokemon
         if (!isOnCooldown)
         {
             isOnCooldown = true;
-            Debug.Log("bim");
-            target.GetComponent<Health>().setPoison();
+            target.GetComponent<Health>().damage(5);
+            target.GetComponent<Rigidbody>().AddExplosionForce(500, transform.position, 100);
             StartCoroutine(Cooldown(attackCd));
         }
     }
 
     public override void Capacity(GameObject target)
     {
-        RaycastHit hit;
-        Ray ray = myCam.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity, ground))
+        if (true)
         {
-            myAgent.Warp(hit.point);
-            Collider[] hits = Physics.OverlapSphere(myAgent.nextPosition, 10, targets);
-            foreach (Collider c in hits)
-            {
-                c.GetComponent<Health>().damage(3);
-            }
+            float initialHp = target.GetComponent<Health>().getHealth();
+            damage = 2 + 1 * (maxHealth - GetComponent<Health>().getHealth()) / 2;
+            target.GetComponent<Health>().damage(damage);
+            GetComponent<Health>().heal(initialHp - target.GetComponent<Health>().getHealth());
+
         }
     }
 
-    private IEnumerator Cooldown(float cd) { 
+    private IEnumerator Cooldown(float cd)
+    {
         yield return new WaitForSeconds(cd);
         isOnCooldown = false;
     }

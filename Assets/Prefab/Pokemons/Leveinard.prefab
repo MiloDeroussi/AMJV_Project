@@ -180,6 +180,8 @@ GameObject:
   - component: {fileID: 7178796336367180202}
   - component: {fileID: 1768877494011088764}
   - component: {fileID: 9041325911330799921}
+  - component: {fileID: -3264430169875900350}
+  - component: {fileID: 5345553159811205894}
   m_Layer: 11
   m_Name: Leveinard
   m_TagString: Untagged
@@ -293,7 +295,58 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 30
   currentHealth: 30
+  defense: 0
   healthBar: {fileID: 5213165790768527933}
+--- !u!54 &-3264430169875900350
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3789247191907119174}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 1
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
+--- !u!114 &5345553159811205894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3789247191907119174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 184a700b056aafa42be50535822bfa15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ground:
+    serializedVersion: 2
+    m_Bits: 1024
+  targets:
+    serializedVersion: 2
+    m_Bits: 2048
+  attackRange: 0
+  detectRange: 0
+  capacityCd: 0
+  attackCd: 2
+  capacityDuration: 0
 --- !u!1 &5919442726692861112
 GameObject:
   m_ObjectHideFlags: 0

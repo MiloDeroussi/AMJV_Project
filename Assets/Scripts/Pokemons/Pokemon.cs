@@ -18,5 +18,5 @@ public abstract class Pokemon : MonoBehaviour
 
     abstract public void Attack(GameObject target);
 
-    abstract public void Capacity();
+    abstract public void Capacity(GameObject target);
 }

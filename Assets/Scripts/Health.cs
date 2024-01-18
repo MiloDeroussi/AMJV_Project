@@ -6,7 +6,9 @@ public class Health : MonoBehaviour
 {
     [SerializeField] float maxHealth;
     [SerializeField] float currentHealth;
+    [SerializeField] float defense;
     [SerializeField] GameObject healthBar;
+    private float mitigatedDamage;
     private float poisonTurn;
     private float poisonDamage;
     SpriteRenderer healthFill;
@@ -35,7 +37,8 @@ public class Health : MonoBehaviour
 
     public void damage(float damage)
     {
-        currentHealth = Mathf.Max(currentHealth - damage, 0);
+        mitigatedDamage = Mathf.Max(damage - defense, 0);
+        currentHealth = Mathf.Max(currentHealth - mitigatedDamage, 0);
     }
 
     public void heal(float heal)

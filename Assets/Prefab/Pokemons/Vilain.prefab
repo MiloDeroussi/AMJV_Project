@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5019552774829249193}
   - component: {fileID: 5168034194307018312}
   - component: {fileID: 7296543054096487673}
+  - component: {fileID: 8235192969779687383}
   m_Layer: 12
   m_Name: Vilain
   m_TagString: Untagged
@@ -144,9 +145,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e5d026da01d27b43854b3ef569f95c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 15
-  currentHealth: 15
+  maxHealth: 50
+  currentHealth: 50
+  defense: 2
   healthBar: {fileID: 6472588588144707565}
+--- !u!54 &8235192969779687383
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9166568137934623690}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 1
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 1
 --- !u!1001 &4710840534159100672
 PrefabInstance:
   m_ObjectHideFlags: 0
