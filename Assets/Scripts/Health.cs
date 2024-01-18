@@ -20,10 +20,6 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentHealth <= 0)
-        {
-            this.enabled = false;
-        }
 
         healthBar.transform.rotation = Quaternion.Euler(0, 45, 0);
         healthVoid.size = Vector3.right *(1 - currentHealth / maxHealth) * 2f + Vector3.up * 0.5f;
