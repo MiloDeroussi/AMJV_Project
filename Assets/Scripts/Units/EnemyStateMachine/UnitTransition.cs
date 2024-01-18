@@ -14,6 +14,7 @@ public class UnitTransition : Transition
     public bool isOnCooldown;
 
     private GameObject unit;
+    private Health health;
     private Transform uTransform;
     private Vector3 initialPosition;
 
@@ -22,9 +23,7 @@ public class UnitTransition : Transition
     //Les variables suivantes seront à récupérer sur notre unité:
     private float attackRange;
     private float detectRange;
-    public float patrolRange;
-
-
+    private float patrolRange;
 
     private float cd;
     private float capacityDuration;
@@ -36,21 +35,26 @@ public class UnitTransition : Transition
     [SerializeField]
     private GameManager gameManager;
     [SerializeField]
-    private bool isEnemy;
-    [SerializeField]
     private GameObject UnitSelector;
-    [SerializeField]
     private EUnitStateMachine stateMachine;
 
+    [SerializeField]
+    private GameObject UnitSelectionSystem;
+    private UnitSelections unitSelection;
 
 
     void Start()
     {
+        
+
+        stateMachine = GetComponent<EUnitStateMachine>();
+
         state = EUnitStateMachine.UnitState.PATROLLING;
 
         unit = this.gameObject;
         uTransform = unit.transform;
         initialPosition = uTransform.position;
+        health = GetComponent<Health>();
 
         stateMachine.attackTarget = null;
         agent = this.GetComponent<NavMeshAgent>();
@@ -63,17 +67,54 @@ public class UnitTransition : Transition
 
         canCapaciting = false;
         isOnCooldown = false;
-        //Les variables suivantes seront à récupérer sur les unités enemies:
+
+
+        
 
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
 
+        if (stateMachine.CurrentState == EUnitStateMachine.UnitState.IDLE)
+        {
+            IdleToAttacking();
+            IdleToMoving();
+        }
+
+        if (stateMachine.CurrentState == EUnitStateMachine.UnitState.MOVING)
+        {
+            MovingToAttacking();
+            MovingToIdle();
+        }
+
+        if (stateMachine.CurrentState == EUnitStateMachine.UnitState.ATTACKING)
+        {
+            AttackToCapaciting();
+            AttackingToMoving();
+            AttackingToIdle();
+        }
+
+            
+
+
+        ToDeath();
+        
+        
     }
 
-    
+    void ToDeath()
+    {
+        if (health.getHealth() <= 0)
+        {
+            this.gameObject.SetActive(false);
+        }
+    }
+
+    void ToObey()
+    {
+        
+    }
 
     void IdleToAttacking()
     {
@@ -84,8 +125,9 @@ public class UnitTransition : Transition
 
             if (results[0] != null)
             {
+
                 stateMachine.attackTarget = results[0].gameObject;
-                stateMachine.focusTarget = null;
+                stateMachine.focusTarget = results[0].gameObject;
                 state = stateMachine.Transition(EUnitStateMachine.UnitState.ATTACKING);
 
             }
@@ -115,9 +157,9 @@ public class UnitTransition : Transition
     {
         Collider[] results = new Collider[1];
 
-        if (Physics.OverlapSphereNonAlloc(uTransform.position, attackRange, results, uLayerMask) == 0)
+        if (Physics.OverlapSphereNonAlloc(uTransform.position, detectRange, results, uLayerMask) == 0)
         {
-
+            Debug.Log("je passe ici attacktoidle");
             stateMachine.attackTarget = null;
             stateMachine.focusTarget = null;
             state = stateMachine.Transition(EUnitStateMachine.UnitState.IDLE);
@@ -125,23 +167,34 @@ public class UnitTransition : Transition
 
         else
         {
-            stateMachine.attackTarget = results[0].gameObject;
+            //stateMachine.attackTarget = results[0].gameObject;
         }
 
 
     }
 
+    void AttackingToMoving()
+    {
+        Collider[] results = new Collider[20];
+
+        if (Physics.OverlapSphereNonAlloc(uTransform.position, attackRange, results, uLayerMask) == 0)
+        {
+            stateMachine.attackTarget = null;
+
+            state = stateMachine.Transition(EUnitStateMachine.UnitState.MOVING);
+        }
+        else if (results[0] != null && !ContainsCollider(results, stateMachine.attackTarget))
+        {
+            stateMachine.focusTarget = results[0].gameObject;
+            stateMachine.attackTarget = stateMachine.focusTarget;
+
+        }
+
+    }
+
     void AttackToCapaciting()
     {
-        if (canCapaciting == false && isOnCooldown == false)
-        {
-            canCapaciting = true;
-            StartCoroutine(RandomTimeCapaciting(capacityDuration));
-        }
-        if (isOnCooldown == true)
-        {
-            StartCoroutine(Cooldown(cd));
-        }
+        
 
     }
 
@@ -157,13 +210,7 @@ public class UnitTransition : Transition
 
             state = stateMachine.Transition(EUnitStateMachine.UnitState.IDLE);
         }
-        else
-        {
-            if (!ContainsCollider(results, stateMachine.focusTarget))
-            {
-                stateMachine.focusTarget = results[0].gameObject;
-            }
-        }
+        
 
     }
 
@@ -188,39 +235,13 @@ public class UnitTransition : Transition
 
             if (results[0] != null)
             {
-                stateMachine.attackTarget = results[0].gameObject;
-                stateMachine.focusTarget = null;
-
+                Debug.Log(results[0].gameObject);
+                stateMachine.focusTarget = results[0].gameObject;
+                stateMachine.attackTarget = stateMachine.focusTarget;
                 state = stateMachine.Transition(EUnitStateMachine.UnitState.ATTACKING);
 
             }
         }
-    }
-
-    void PatrollingToMoving()
-    {
-        Collider[] results = new Collider[1];
-
-        if (Physics.OverlapSphereNonAlloc(uTransform.position, detectRange, results, uLayerMask) > 0)
-        {
-
-            if (results[0] != null)
-            {
-                stateMachine.focusTarget = results[0].gameObject;
-                stateMachine.attackTarget = null;
-                state = stateMachine.Transition(EUnitStateMachine.UnitState.MOVING);
-            }
-        }
-    }
-
-    private IEnumerator RandomTimeCapaciting(float capacityDuration)
-    {
-        yield return new WaitForSeconds(Random.Range(1f, 5f));
-        state = stateMachine.Transition(EUnitStateMachine.UnitState.CAPACITING);
-        canCapaciting = false;
-        isOnCooldown = true;
-        yield return new WaitForSeconds(capacityDuration);
-        state = stateMachine.Transition(EUnitStateMachine.UnitState.ATTACKING);
     }
 
     private IEnumerator Cooldown(float cd)
@@ -230,5 +251,10 @@ public class UnitTransition : Transition
 
     }
 
+
+
+
 }
+
+
 
