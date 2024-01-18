@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KingManager : MonoBehaviour
 {
-    public GameObject king;
+    private GameObject king;
     // Start is called before the first frame update
     void Start()
     {

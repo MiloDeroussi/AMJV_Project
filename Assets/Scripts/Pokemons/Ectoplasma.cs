@@ -23,7 +23,8 @@ public class Ectoplasma : Pokemon
 
     public override void Attack(GameObject target)
     {
-        target.GetComponent<Health>().damage(1);
+        Debug.Log("bim");
+        target.GetComponent<Health>().setPoison();
     }
 
     public override void Capacity()

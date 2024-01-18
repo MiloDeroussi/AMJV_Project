@@ -7,6 +7,8 @@ public class Health : MonoBehaviour
     [SerializeField] float maxHealth;
     [SerializeField] float currentHealth;
     [SerializeField] GameObject healthBar;
+    private float poisonTurn;
+    private float poisonDamage;
     SpriteRenderer healthFill;
     SpriteRenderer healthVoid;
     // Start is called before the first frame update
@@ -15,6 +17,11 @@ public class Health : MonoBehaviour
         currentHealth = maxHealth;
         healthFill = GetComponentsInChildren<SpriteRenderer>()[0];
         healthVoid = GetComponentsInChildren<SpriteRenderer>()[1];
+
+        poisonDamage = 0;
+        poisonTurn = 0;
+
+        StartCoroutine(Poison());
     }
 
     // Update is called once per frame
@@ -39,5 +46,35 @@ public class Health : MonoBehaviour
     public float getHealth()
     {
         return currentHealth;
+    }
+
+    public void setPoison()
+    {
+        if (poisonDamage == 0)
+        {
+            poisonDamage = 1;
+        }
+        else if (poisonDamage < 2)
+        {
+            poisonDamage += 0.5f;
+        }
+        poisonTurn = 3;
+    }
+    IEnumerator Poison()
+    {
+        while (true)
+        {
+            if (poisonTurn > 0)
+            {
+                currentHealth -= poisonDamage;
+                poisonTurn -= 1;
+            }
+            else if (poisonTurn == 0)
+            {
+                poisonDamage = 0;
+            }
+            yield return new WaitForSeconds(1f);
+        }
+
     }
 }
