@@ -3,22 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Courrousinge : Pokemon
+public class Archéduc : Pokemon
 {
     private EUnitStateMachine usm;
 
     NavMeshAgent myAgent;
     Camera myCam;
-    [SerializeField] LayerMask ground;
-    [SerializeField] LayerMask targets;
-    public bool isOnAttackCooldown;public bool isOnCapacityCooldown;
+    public LayerMask ground;
+    public LayerMask targets;
+    public bool isOnAttackCooldown; public bool isOnCapacityCooldown;
     private float damage;
-    private float maxHealth;
     [SerializeField] float attackRange;
     [SerializeField] float detectRange;
     [SerializeField] float capacityCd;
     [SerializeField] float attackCd;
     [SerializeField] float capacityDuration;
+    [SerializeField] float capacityDamage;[SerializeField] float attackDamage;
+    [SerializeField] float capacityRange;
+    [SerializeField] private GameObject[] carquois;
 
     public float getAttackCd()
     {
@@ -37,7 +39,6 @@ public class Courrousinge : Pokemon
         myAgent = GetComponent<NavMeshAgent>();
         myCam = Camera.main;
         isOnCapacityCooldown = false; isOnAttackCooldown = false;
-        maxHealth = GetComponent<Health>().getHealth();
     }
 
     // Update is called once per frame
@@ -51,24 +52,23 @@ public class Courrousinge : Pokemon
         if (!isOnAttackCooldown)
         {
             isOnAttackCooldown = true;
-            damage = 3 + 1 * (maxHealth - GetComponent<Health>().getHealth()) / 4;
-            usm.attackTarget.GetComponent<Health>().damage(damage);
+            usm.attackTarget.GetComponent<Health>().damage(attackDamage);
             StartCoroutine(AttackCooldown(attackCd));
         }
     }
 
     public override void Capacity()
     {
-        if (!isOnCapacityCooldown)
+        if (!isOnAttackCooldown)
         {
-            isOnCapacityCooldown = true;
-            float initialHp = usm.attackTarget.GetComponent<Health>().getHealth();
-            damage = 2 + 1 * (maxHealth - GetComponent<Health>().getHealth()) / 2;
-            usm.attackTarget.GetComponent<Health>().damage(damage);
-            GetComponent<Health>().heal(initialHp - usm.attackTarget.GetComponent<Health>().getHealth());
+            Collider[] hits = Physics.OverlapSphere(myAgent.nextPosition, capacityRange, targets);
+            foreach (Collider c in hits)
+            {
+                c.GetComponent<Health>().heal(capacityDamage);
+            }
             StartCoroutine(CapacityCooldown(capacityCd));
-
         }
+
     }
 
     private IEnumerator AttackCooldown(float cd)
@@ -83,3 +83,4 @@ public class Courrousinge : Pokemon
         isOnCapacityCooldown = false;
     }
 }
+

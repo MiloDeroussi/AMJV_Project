@@ -10,7 +10,7 @@ public class UnitTransition : Transition
     private EUnitStateMachine.UnitState state { get; set; }
 
     public bool canCapaciting;
-    public bool isOnCooldown;
+   
 
     private GameObject unit;
     private Health health;
@@ -69,7 +69,6 @@ public class UnitTransition : Transition
         capacityDuration = 2f;
 
         canCapaciting = false;
-        isOnCooldown = false;
 
         isObeying = false;
         isInAttackRangeObey = false;
@@ -80,7 +79,8 @@ public class UnitTransition : Transition
     {
         ToObey();
         ToDeath();
-        
+        ToCapaciting();
+
         if (!isObeying)
         {
             if (stateMachine.CurrentState == EUnitStateMachine.UnitState.IDLE)
@@ -97,7 +97,7 @@ public class UnitTransition : Transition
 
             else if (stateMachine.CurrentState == EUnitStateMachine.UnitState.ATTACKING)
             {
-                AttackToCapaciting();
+               
                 AttackingToMoving();
                 AttackingToIdle();
             }
@@ -131,7 +131,7 @@ public class UnitTransition : Transition
 
     void ToObey()
     {
-        Debug.Log("Contains ? " + unitSelection.GetSelectedList().Contains(unit));
+        
         if ((unitSelection.GetSelectedList().Contains(unit)))
         {
             isObeying = true;
@@ -227,9 +227,9 @@ public class UnitTransition : Transition
             {
                 stateMachine.focusTarget = results[0].gameObject;
                 stateMachine.attackTarget = null;
-                Debug.Log("idleToMoving");
+               
                 state = stateMachine.Transition(EUnitStateMachine.UnitState.MOVING);
-                Debug.Log("State = " + state);
+ 
             }
         }
 
@@ -273,15 +273,6 @@ public class UnitTransition : Transition
 
     }
 
-    void AttackToCapaciting()
-    {
-
-        if (Input.GetKeyDown(KeyCode.E) && !isOnCooldown)
-        {
-            //
-        }
-    }
-
     void MovingToIdle()
     {
 
@@ -291,7 +282,7 @@ public class UnitTransition : Transition
         {
             stateMachine.focusTarget = null;
             stateMachine.attackTarget = null;
-            Debug.Log("On passe là ?");
+      
             state = stateMachine.Transition(EUnitStateMachine.UnitState.IDLE);
         }
         
@@ -319,7 +310,7 @@ public class UnitTransition : Transition
 
             if (results[0] != null)
             {
-                Debug.Log(results[0].gameObject);
+             
                 stateMachine.focusTarget = results[0].gameObject;
                 stateMachine.attackTarget = stateMachine.focusTarget;
                 state = stateMachine.Transition(EUnitStateMachine.UnitState.ATTACKING);
@@ -328,16 +319,18 @@ public class UnitTransition : Transition
         }
     }
 
-    private IEnumerator Cooldown(float cd)
+
+    void ToCapaciting()
     {
-        yield return new WaitForSeconds(cd);
-        isOnCooldown = false;
 
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            EUnitStateMachine.UnitState prevState = state;
+            state = stateMachine.Transition(EUnitStateMachine.UnitState.CAPACITING);
+
+            
+        }
     }
-
-    
-
-
 
 
 }

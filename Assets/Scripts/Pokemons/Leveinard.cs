@@ -5,25 +5,39 @@ using UnityEngine.AI;
 
 public class Leveinard : Pokemon
 {
+    private EUnitStateMachine usm;
+
     NavMeshAgent myAgent;
     Camera myCam;
     public LayerMask ground;
     public LayerMask targets;
-    private bool isOnCooldown;
+    public bool isOnAttackCooldown; public bool isOnCapacityCooldown;
     private float damage;
-    private float maxHealth;
     [SerializeField] float attackRange;
     [SerializeField] float detectRange;
     [SerializeField] float capacityCd;
     [SerializeField] float attackCd;
     [SerializeField] float capacityDuration;
+    [SerializeField] float capacityDamage;  [SerializeField] float attackDamage;
+    [SerializeField] float capacityRange;
+
+    public float getAttackCd()
+    {
+        return attackCd;
+    }
+
+    public float getCooldown()
+    {
+        return capacityCd;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        usm = GetComponent<EUnitStateMachine>();
         myAgent = GetComponent<NavMeshAgent>();
         myCam = Camera.main;
-        isOnCooldown = false;
-        maxHealth = GetComponent<Health>().getHealth();
+        isOnCapacityCooldown = false; isOnAttackCooldown = false;
     }
 
     // Update is called once per frame
@@ -32,28 +46,39 @@ public class Leveinard : Pokemon
 
     }
 
-    public override void Attack(GameObject target)
+    public override void Attack()
     {
-        if (!isOnCooldown)
+        if (!isOnAttackCooldown)
         {
-            isOnCooldown = true;
-            target.GetComponent<Health>().damage(5);
-            StartCoroutine(Cooldown(attackCd));
+            isOnAttackCooldown = true;
+            usm.attackTarget.GetComponent<Health>().damage(attackDamage);
+            StartCoroutine(AttackCooldown(attackCd));
         }
     }
 
-    public override void Capacity(GameObject target)
+    public override void Capacity()
     {
-        Collider[] hits = Physics.OverlapSphere(myAgent.nextPosition, 10, targets);
-        foreach (Collider c in hits)
+        if (!isOnAttackCooldown)
         {
-            c.GetComponent<Health>().heal(10);
+            Collider[] hits = Physics.OverlapSphere(myAgent.nextPosition, capacityRange, targets);
+            foreach (Collider c in hits)
+            {
+                c.GetComponent<Health>().heal(capacityDamage);
+            }
+            StartCoroutine(CapacityCooldown(capacityCd));
         }
+        
     }
 
-    private IEnumerator Cooldown(float cd)
+    private IEnumerator AttackCooldown(float cd)
     {
         yield return new WaitForSeconds(cd);
-        isOnCooldown = false;
+        isOnAttackCooldown = false;
+    }
+
+    private IEnumerator CapacityCooldown(float cd)
+    {
+        yield return new WaitForSeconds(cd);
+        isOnCapacityCooldown = false;
     }
 }

@@ -14,6 +14,11 @@ public class ObeyAttackingState : UnitBaseState
 
     public override void Update()
     {
+        if (usm.attackTarget != null)
+        
+        {
+            usm.pokemon.Attack();
+        }
 
 
     }

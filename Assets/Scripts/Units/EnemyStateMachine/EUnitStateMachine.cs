@@ -33,15 +33,14 @@ public class EUnitStateMachine: MonoBehaviour
     public GameObject attackTarget;
     public GameObject focusTarget;
     public bool obeyActionIsGiven;
-
+    [HideInInspector] public Pokemon pokemon;
     [HideInInspector] public NavMeshAgent agent;
 
     private Dictionary<UnitState, UnitBaseState> stateDictionary;
     [SerializeField] private bool isEnemy;
 
     Transition transition;
-
-
+    public bool isOnCooldown;
 
     private void Start()
     {
@@ -55,7 +54,7 @@ public class EUnitStateMachine: MonoBehaviour
         attackTarget = null;
         focusTarget = null;
         agent = this.GetComponent<NavMeshAgent>();
-
+        pokemon = GetComponent<Pokemon>();
         //Les variables suivantes seront à récupérer sur notre unité
 
 
@@ -86,6 +85,11 @@ public class EUnitStateMachine: MonoBehaviour
         }
         
         stateDictionary[CurrentState].Enter();
+    }
+
+    public bool GetIsEnemy()
+    {
+        return isEnemy;
     }
 
     private void OnDrawGizmos()
@@ -131,6 +135,13 @@ public class EUnitStateMachine: MonoBehaviour
         yield return new WaitForSeconds(5f);
         isPatrolling = false;
 
+    }
+
+    public IEnumerator Cooldown(float cd)
+    {
+        isOnCooldown = true;
+        yield return new WaitForSeconds(cd);
+        isOnCooldown = false;
     }
 
 

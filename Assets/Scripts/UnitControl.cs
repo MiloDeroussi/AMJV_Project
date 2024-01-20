@@ -57,7 +57,7 @@ public class UnitControl : MonoBehaviour
             if (Physics.Raycast(ray, out hit, Mathf.Infinity))
             {
                 Debug.Log("J'utilise ma capacit� !");
-                pokemon.Capacity(hit.collider.gameObject);
+                pokemon.Capacity();
             }
         }
     }

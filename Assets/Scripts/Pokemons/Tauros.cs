@@ -5,11 +5,14 @@ using UnityEngine.AI;
 
 public class Tauros : Pokemon
 {
+    private EUnitStateMachine usm;
+
     NavMeshAgent myAgent;
     Camera myCam;
     public LayerMask ground;
     public LayerMask targets;
-    private bool isOnCooldown;
+    public bool isOnAttackCooldown;
+    public bool isOnCapacityCooldown;
     private float damage;
     private float maxHealth;
     [SerializeField] float attackRange;
@@ -17,12 +20,27 @@ public class Tauros : Pokemon
     [SerializeField] float capacityCd;
     [SerializeField] float attackCd;
     [SerializeField] float capacityDuration;
+    [SerializeField] float capacityRange;
+    [SerializeField] float capacityRadius;
+    [SerializeField] float capacityDamage;
+    [SerializeField] float attackDamage;
+    public float getAttackCd()
+    {
+        return attackCd;
+    }
+
+    public float getCooldown()
+    {
+        return capacityCd;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        usm = GetComponent<EUnitStateMachine>();
         myAgent = GetComponent<NavMeshAgent>();
         myCam = Camera.main;
-        isOnCooldown = false;
+        isOnCapacityCooldown = false; isOnAttackCooldown = false;
         maxHealth = GetComponent<Health>().getHealth();
     }
 
@@ -32,32 +50,40 @@ public class Tauros : Pokemon
 
     }
 
-    public override void Attack(GameObject target)
+    public override void Attack()
     {
-        if (!isOnCooldown)
+        if (!isOnAttackCooldown)
         {
-            isOnCooldown = true;
-            target.GetComponent<Health>().damage(5);
-            target.GetComponent<Rigidbody>().AddExplosionForce(500, transform.position, 100);
-            StartCoroutine(Cooldown(attackCd));
+            isOnAttackCooldown = true;
+            usm.attackTarget.GetComponent<Health>().damage(attackDamage);
+            usm.attackTarget.GetComponent<Rigidbody>().AddExplosionForce(500, transform.position, 100);
+            StartCoroutine(AttackCooldown(attackCd));
         }
     }
 
-    public override void Capacity(GameObject target)
+    public override void Capacity()
     {
-        if (true)
+        if (!isOnCapacityCooldown)
         {
-            float initialHp = target.GetComponent<Health>().getHealth();
+            isOnCapacityCooldown = true;
+            float initialHp = usm.attackTarget.GetComponent<Health>().getHealth();
             damage = 2 + 1 * (maxHealth - GetComponent<Health>().getHealth()) / 2;
-            target.GetComponent<Health>().damage(damage);
-            GetComponent<Health>().heal(initialHp - target.GetComponent<Health>().getHealth());
-
+            usm.attackTarget.GetComponent<Health>().damage(damage);
+            GetComponent<Health>().heal(initialHp - usm.attackTarget.GetComponent<Health>().getHealth());
+            StartCoroutine(CapacityCooldown(capacityCd));
         }
     }
 
-    private IEnumerator Cooldown(float cd)
+    private IEnumerator AttackCooldown(float cd)
     {
         yield return new WaitForSeconds(cd);
-        isOnCooldown = false;
+        isOnAttackCooldown = false;
     }
+
+    private IEnumerator CapacityCooldown(float cd)
+    {
+        yield return new WaitForSeconds(cd);
+        isOnCapacityCooldown = false;
+    }
+
 }

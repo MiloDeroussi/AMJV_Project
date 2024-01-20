@@ -14,7 +14,11 @@ public class AttackingState : UnitBaseState
 
     public override void Update()
     {
-        Debug.Log("Target under fire");
+        if (usm.attackTarget != null)
+        {
+            usm.pokemon.Attack();
+        }
+
     }
 
     public override void Exit()

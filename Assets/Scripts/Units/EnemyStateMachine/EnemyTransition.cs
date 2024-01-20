@@ -232,7 +232,7 @@ public class EnemyTransition : Transition
 
         if (Physics.OverlapSphereNonAlloc(uTransform.position, detectRange, results, uLayerMask) == 0)
         {
-            Debug.Log("je passe ici attacktoidle");
+            
             stateMachine.attackTarget = null;
             stateMachine.focusTarget = null;
             state = stateMachine.Transition(EUnitStateMachine.UnitState.IDLE);
@@ -267,15 +267,12 @@ public class EnemyTransition : Transition
 
     void AttackToCapaciting()
     {
-        if (canCapaciting == false && isOnCooldown == false)
+        if (canCapaciting == false)
         {
             canCapaciting = true;
-            StartCoroutine(RandomTimeCapaciting(capacityDuration));
+            StartCoroutine(RandomTimeCapaciting(capacityDuration));;
         }
-        if (isOnCooldown == true)
-        {
-            StartCoroutine(Cooldown(cd));
-        }
+        
 
     }
 
@@ -322,7 +319,7 @@ public class EnemyTransition : Transition
 
             if (results[0] != null)
             {
-                Debug.Log(results[0].gameObject);
+               
                 stateMachine.focusTarget = results[0].gameObject;
                 stateMachine.attackTarget = stateMachine.focusTarget;
                 state = stateMachine.Transition(EUnitStateMachine.UnitState.ATTACKING);
@@ -336,17 +333,11 @@ public class EnemyTransition : Transition
         yield return new WaitForSeconds(Random.Range(1f, 5f));
         state = stateMachine.Transition(EUnitStateMachine.UnitState.CAPACITING);
         canCapaciting = false;
-        isOnCooldown = true;
-        yield return new WaitForSeconds(capacityDuration);
+        yield return new WaitForSeconds(2f);
         state = stateMachine.Transition(EUnitStateMachine.UnitState.ATTACKING);
     }
 
-    private IEnumerator Cooldown(float cd)
-    {
-        yield return new WaitForSeconds(cd);
-        isOnCooldown = false;
-
-    }
+    
     void PatrollingToMoving()
     {
         Collider[] results = new Collider[1];

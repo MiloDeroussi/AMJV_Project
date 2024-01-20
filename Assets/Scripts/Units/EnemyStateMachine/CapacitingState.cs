@@ -10,11 +10,12 @@ public class CapacitingState : UnitBaseState
     public override void Enter()
     {
         usm.agent.isStopped = true;
+        
     }
 
     public override void Update()
     {
-
+        usm.pokemon.Capacity();
     }
 
     public override void Exit()

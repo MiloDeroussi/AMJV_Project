@@ -5,22 +5,40 @@ using UnityEngine.AI;
 
 public class Ectoplasma : Pokemon
 {
+    private EUnitStateMachine usm;
+
     NavMeshAgent myAgent;
     Camera myCam;
     public LayerMask ground;
     public LayerMask targets;
-    private bool isOnCooldown;
+    public bool isOnAttackCooldown;
+    public bool isOnCapacityCooldown;
     [SerializeField] float attackRange;
     [SerializeField] float detectRange;
     [SerializeField] float capacityCd;
-    [SerializeField] float attackCd;
+    [SerializeField] private float attackCd;
     [SerializeField] float capacityDuration;
+    [SerializeField] float capacityRange;
+    [SerializeField] float capacityRadius;
+    [SerializeField] float capacityDamage;
     // Start is called before the first frame update
+
+    public float getAttackCd()
+    {
+        return attackCd;
+    }
+
+    public float getCooldown()
+    {
+        return capacityCd;
+    }
+
     void Start()
     {
+        usm = GetComponent<EUnitStateMachine>();
         myAgent = GetComponent<NavMeshAgent>();
         myCam = Camera.main;
-        isOnCooldown = false;
+        isOnCapacityCooldown = false;isOnAttackCooldown = false;
     }
 
     // Update is called once per frame
@@ -29,34 +47,67 @@ public class Ectoplasma : Pokemon
         
     }
 
-    public override void Attack(GameObject target)
+    public override void Attack()
     {
-        if (!isOnCooldown)
+        if (!isOnAttackCooldown)
         {
-            isOnCooldown = true;
-            Debug.Log("bim");
-            target.GetComponent<Health>().setPoison();
-            StartCoroutine(Cooldown(attackCd));
+            isOnAttackCooldown = true;
+            usm?.attackTarget.GetComponent<Health>().setPoison();
+            StartCoroutine(AttackCooldown(attackCd));
         }
     }
 
-    public override void Capacity(GameObject target)
+    public override void Capacity()
     {
-        RaycastHit hit;
-        Ray ray = myCam.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity, ground))
+        if (!isOnCapacityCooldown)
         {
-            myAgent.Warp(hit.point);
-            Collider[] hits = Physics.OverlapSphere(myAgent.nextPosition, 10, targets);
-            foreach (Collider c in hits)
+            RaycastHit hit;
+            Ray ray = myCam.ScreenPointToRay(Input.mousePosition);
+
+            if (usm.GetIsEnemy())
             {
-                c.GetComponent<Health>().damage(3);
+                isOnCapacityCooldown = true;
+                Collider[] scans = Physics.OverlapSphere(myAgent.nextPosition, capacityRange, targets);
+                int random = Random.Range(0, scans.Length);
+                myAgent.Warp(scans[random].transform.position);
+                Collider[] hits = Physics.OverlapSphere(myAgent.nextPosition, capacityRadius, targets);
+                foreach (Collider c in hits)
+                {
+                    c.GetComponent<Health>().damage(capacityDamage);
+                }
+            }
+
+            else if (Physics.Raycast(ray, out hit, Mathf.Infinity, ground))
+            {
+               
+                if (Mathf.Abs(Vector3.Distance(hit.point, this.transform.position)) < capacityRange)
+                {
+                    myAgent.Warp(hit.point);
+                    isOnCapacityCooldown = true;
+                    Collider[] hits = Physics.OverlapSphere(myAgent.nextPosition, capacityRadius, targets);
+                    foreach (Collider c in hits)
+                    {
+                        c.GetComponent<Health>().damage(capacityDamage);
+                    }
+                }
+
+            }
+            if (isOnCapacityCooldown)
+            {
+                StartCoroutine(CapacityCooldown(capacityCd));
             }
         }
+       
     }
 
-    private IEnumerator Cooldown(float cd) { 
+    private IEnumerator AttackCooldown(float cd) { 
         yield return new WaitForSeconds(cd);
-        isOnCooldown = false;
+        isOnAttackCooldown = false;
+    }
+
+    private IEnumerator CapacityCooldown(float cd)
+    {
+        yield return new WaitForSeconds(cd);
+        isOnCapacityCooldown = false;
     }
 }
