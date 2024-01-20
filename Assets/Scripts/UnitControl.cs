@@ -17,6 +17,7 @@ public class UnitControl : MonoBehaviour
         myCam = Camera.main;
         myAgent = GetComponent<NavMeshAgent>();
         usm = GetComponent<EUnitStateMachine>();
+
         pokemon = GetComponent<Pokemon>();
     }
 
@@ -45,6 +46,18 @@ public class UnitControl : MonoBehaviour
                 myAgent.SetDestination(hit.point);
                 usm.obeyActionIsGiven = true;
                 usm.focusTarget = null;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            RaycastHit hit;
+            Ray ray = myCam.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+            {
+                Debug.Log("J'utilise ma capacit� !");
+                pokemon.Capacity(hit.collider.gameObject);
             }
         }
     }

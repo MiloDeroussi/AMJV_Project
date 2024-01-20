@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Ectoplasma : Pokemon
+public class Ronflex : Pokemon
 {
     NavMeshAgent myAgent;
     Camera myCam;
@@ -26,7 +26,7 @@ public class Ectoplasma : Pokemon
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public override void Attack(GameObject target)
@@ -34,29 +34,35 @@ public class Ectoplasma : Pokemon
         if (!isOnCooldown)
         {
             isOnCooldown = true;
-            Debug.Log("bim");
-            target.GetComponent<Health>().setPoison();
+            Collider[] hits = Physics.OverlapSphere(myAgent.nextPosition, 10, targets);
+            foreach (Collider c in hits)
+            {
+                c.GetComponent<Health>().damage(5);
+            }
             StartCoroutine(Cooldown(attackCd));
         }
     }
 
     public override void Capacity(GameObject target)
     {
-        RaycastHit hit;
-        Ray ray = myCam.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity, ground))
-        {
-            myAgent.Warp(hit.point);
-            Collider[] hits = Physics.OverlapSphere(myAgent.nextPosition, 10, targets);
-            foreach (Collider c in hits)
-            {
-                c.GetComponent<Health>().damage(3);
-            }
-        }
+    
+        StartCoroutine(Repos());
     }
 
-    private IEnumerator Cooldown(float cd) { 
+    private IEnumerator Cooldown(float cd)
+    {
         yield return new WaitForSeconds(cd);
         isOnCooldown = false;
+    }
+
+    private IEnumerator Repos()
+    {
+        float i = 5;
+        while (i > 0)
+        {
+            GetComponent<Health>().heal(5);
+            i--;
+            yield return new WaitForSeconds(1);
+        }
     }
 }

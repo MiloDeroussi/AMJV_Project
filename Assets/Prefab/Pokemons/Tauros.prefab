@@ -552,6 +552,8 @@ GameObject:
   - component: {fileID: 5738172366058478782}
   - component: {fileID: 7557401099685514428}
   - component: {fileID: 4542980490662713670}
+  - component: {fileID: 7809972810685784460}
+  - component: {fileID: 2286396083247256066}
   m_Layer: 11
   m_Name: Tauros
   m_TagString: Untagged
@@ -667,7 +669,58 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 15
   currentHealth: 15
+  defense: 3
   healthBar: {fileID: 6834966431491715065}
+--- !u!114 &7809972810685784460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4538439966124305700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dca7384e7d2ed2489f9ec5314c5c47b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ground:
+    serializedVersion: 2
+    m_Bits: 1024
+  targets:
+    serializedVersion: 2
+    m_Bits: 4096
+  attackRange: 0
+  detectRange: 0
+  capacityCd: 0
+  attackCd: 1.67
+  capacityDuration: 0
+--- !u!54 &2286396083247256066
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4538439966124305700}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 1
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
 --- !u!1 &5196163128529407652
 GameObject:
   m_ObjectHideFlags: 0
