@@ -5,31 +5,28 @@ using UnityEngine.AI;
 
 public class UnitControl : MonoBehaviour
 {
-    Camera myCam;
-    NavMeshAgent myAgent;
-    Pokemon pokemon;
+    private Camera myCam;
+    private NavMeshAgent myAgent;
+    private Pokemon pokemon;
     public LayerMask ground;
     public LayerMask ennemy;
+    private EUnitStateMachine usm;
     // Start is called before the first frame update
     void Start()
     {
         myCam = Camera.main;
         myAgent = GetComponent<NavMeshAgent>();
-
-        if (gameObject.name == "Ectoplasma")
-        {
-            Debug.Log(gameObject.name);
-            pokemon = GetComponent<Ectoplasma>();
-        }
+        usm = GetComponent<EUnitStateMachine>();
+        pokemon = GetComponent<Pokemon>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if ((myAgent.destination - myAgent.nextPosition).magnitude < 2 && myAgent.velocity.magnitude < 1)
+        /*if ((myAgent.destination - myAgent.nextPosition).magnitude < 2 && myAgent.velocity.magnitude < 1)
         {
             myAgent.SetDestination(myAgent.nextPosition);
-        }
+        }*/
         if (Input.GetMouseButtonDown(1))
         {
             RaycastHit hit;
@@ -38,19 +35,17 @@ public class UnitControl : MonoBehaviour
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, ennemy))
             {
                 Debug.Log("J'attaque " + hit.collider.gameObject.name+" !");
-                pokemon.Attack(hit.collider.gameObject);
+                myAgent.SetDestination(hit.point);
+                usm.focusTarget = hit.collider.gameObject;
+                usm.obeyActionIsGiven = true;
             }
 
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, ground))
+            else if (Physics.Raycast(ray, out hit, Mathf.Infinity, ground))
             {
                 myAgent.SetDestination(hit.point);
+                usm.obeyActionIsGiven = true;
+                usm.focusTarget = null;
             }
-        }
-
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            Debug.Log("J'utilise ma capacité !");
-            pokemon.Capacity();
         }
     }
 }

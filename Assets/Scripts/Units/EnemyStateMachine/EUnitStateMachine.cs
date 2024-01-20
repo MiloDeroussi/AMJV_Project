@@ -13,14 +13,14 @@ public class EUnitStateMachine: MonoBehaviour
         CAPACITING,
         PATROLLING,
         DEAD,
-        OBEY,
+        OBEYMOVING,
+        OBEYATTACKING,
         REGICINGATTACKING,
         REGICINGMOVING,
 
     }
 
     public bool isPatrolling;
-
     private GameObject unit;
     private Transform uTransform;
     private Vector3 initialPosition;
@@ -32,6 +32,7 @@ public class EUnitStateMachine: MonoBehaviour
     public UnitState CurrentState;
     public GameObject attackTarget;
     public GameObject focusTarget;
+    public bool obeyActionIsGiven;
 
     [HideInInspector] public NavMeshAgent agent;
 
@@ -70,6 +71,8 @@ public class EUnitStateMachine: MonoBehaviour
             {UnitState.DEAD, new CapacitingState(this) },
             {UnitState.REGICINGMOVING, new RegicingMovingState(this) },
             {UnitState.REGICINGATTACKING, new RegicingAttackingState(this) },
+            {UnitState.OBEYMOVING, new ObeyMovingState(this) },
+            {UnitState.OBEYATTACKING, new ObeyAttackingState(this) },
         };
         if (!isEnemy)
         {
@@ -121,13 +124,15 @@ public class EUnitStateMachine: MonoBehaviour
 
     public IEnumerator PatrolNewPath()
     {
-
+        isPatrolling = true;
         agent.SetDestination(new Vector3(Random.Range(initialPosition.x - patrolRange, initialPosition.x + patrolRange), initialPosition.y, Random.Range(initialPosition.z - patrolRange, initialPosition.z + patrolRange)));
         yield return new WaitForSeconds(0.5f); //pour s'assurer qu'on ne détecte pas une velocity nulle au début du mouvement
         yield return new WaitUntil(() => agent.velocity.magnitude == 0);
         yield return new WaitForSeconds(5f);
         isPatrolling = false;
+
     }
+
 
 }
 

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class UnitSelections : MonoBehaviour
 {
-    public List<GameObject> unitList = new List<GameObject>();
-    public List<GameObject> unitSelected = new List<GameObject>();
+    [SerializeField] public List<GameObject> unitList = new List<GameObject>();
+    [SerializeField] public List<GameObject> unitSelected = new List<GameObject>();
 
     private static UnitSelections _instance;
 
@@ -70,5 +70,10 @@ public class UnitSelections : MonoBehaviour
     public void Deselect(GameObject unitToDeselect)
     {
 
+    }
+
+    public List<GameObject> GetSelectedList()
+    {
+        return unitSelected;
     }
 }

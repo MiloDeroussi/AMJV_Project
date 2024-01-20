@@ -9,7 +9,6 @@ public class EnemyTransition : Transition
 
     private EUnitStateMachine.UnitState state { get; set; }
 
-    public bool isPatrolling;
     public bool canCapaciting;
     public bool isOnCooldown;
 

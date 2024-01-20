@@ -9,7 +9,6 @@ public class UnitTransition : Transition
 
     private EUnitStateMachine.UnitState state { get; set; }
 
-    public bool isPatrolling;
     public bool canCapaciting;
     public bool isOnCooldown;
 
@@ -34,19 +33,22 @@ public class UnitTransition : Transition
     private LayerMask uLayerMask;
     [SerializeField]
     private GameManager gameManager;
-    [SerializeField]
-    private GameObject UnitSelector;
+
     private EUnitStateMachine stateMachine;
 
     [SerializeField]
-    private GameObject UnitSelectionSystem;
-    private UnitSelections unitSelection;
+    private GameObject unitSelectionSystem;
 
+    private UnitSelections unitSelection;
+    private UnitControl unitControl;
+
+    private bool isObeying;
+    private bool isInAttackRangeObey;
 
     void Start()
     {
         
-
+        
         stateMachine = GetComponent<EUnitStateMachine>();
 
         state = EUnitStateMachine.UnitState.PATROLLING;
@@ -55,6 +57,7 @@ public class UnitTransition : Transition
         uTransform = unit.transform;
         initialPosition = uTransform.position;
         health = GetComponent<Health>();
+        unitSelection = unitSelectionSystem.GetComponentInChildren<UnitSelections>();
 
         stateMachine.attackTarget = null;
         agent = this.GetComponent<NavMeshAgent>();
@@ -68,37 +71,52 @@ public class UnitTransition : Transition
         canCapaciting = false;
         isOnCooldown = false;
 
-
-        
+        isObeying = false;
+        isInAttackRangeObey = false;
 
     }
 
     private void Update()
     {
-
-        if (stateMachine.CurrentState == EUnitStateMachine.UnitState.IDLE)
-        {
-            IdleToAttacking();
-            IdleToMoving();
-        }
-
-        if (stateMachine.CurrentState == EUnitStateMachine.UnitState.MOVING)
-        {
-            MovingToAttacking();
-            MovingToIdle();
-        }
-
-        if (stateMachine.CurrentState == EUnitStateMachine.UnitState.ATTACKING)
-        {
-            AttackToCapaciting();
-            AttackingToMoving();
-            AttackingToIdle();
-        }
-
-            
-
-
+        ToObey();
         ToDeath();
+        
+        if (!isObeying)
+        {
+            if (stateMachine.CurrentState == EUnitStateMachine.UnitState.IDLE)
+            {
+                IdleToAttacking();
+                IdleToMoving();
+            }
+
+            else if (stateMachine.CurrentState == EUnitStateMachine.UnitState.MOVING)
+            {
+                MovingToAttacking();
+                MovingToIdle();
+            }
+
+            else if (stateMachine.CurrentState == EUnitStateMachine.UnitState.ATTACKING)
+            {
+                AttackToCapaciting();
+                AttackingToMoving();
+                AttackingToIdle();
+            }
+        }
+        
+        else if (isObeying)
+        {
+            if (stateMachine.CurrentState == EUnitStateMachine.UnitState.OBEYMOVING)
+            {
+                ObeyMovingToObeyAttacking();
+            }
+            if (stateMachine.CurrentState == EUnitStateMachine.UnitState.OBEYATTACKING)
+            {
+                ObeyAttackingToObeyMoving();
+            }
+        }
+
+
+        StopObey();
         
         
     }
@@ -113,7 +131,70 @@ public class UnitTransition : Transition
 
     void ToObey()
     {
+        Debug.Log("Contains ? " + unitSelection.GetSelectedList().Contains(unit));
+        if ((unitSelection.GetSelectedList().Contains(unit)))
+        {
+            isObeying = true;
+            if (state == EUnitStateMachine.UnitState.ATTACKING || state == EUnitStateMachine.UnitState.CAPACITING)
+            {
+                state = stateMachine.Transition(EUnitStateMachine.UnitState.OBEYATTACKING);
+            }
+            else
+            {
+                state = stateMachine.Transition(EUnitStateMachine.UnitState.OBEYMOVING);
+            }
+        }
+    }
+
+    void StopObey()
+    {
+        if (!unitSelection.GetSelectedList().Contains(unit) && isObeying)
+        {
+            isObeying = false;
+            state = stateMachine.Transition(EUnitStateMachine.UnitState.IDLE);
+        }
+    }
+
+    void ObeyMovingToObeyAttacking()
+    {
+        Collider[] results = new Collider[20];
+        if (Physics.OverlapSphereNonAlloc(uTransform.position, attackRange, results, uLayerMask) > 0
+            && ContainsCollider(results, stateMachine.focusTarget))
+        {
+            
+            if (!stateMachine.obeyActionIsGiven)
+            {
+                isInAttackRangeObey = true;
+                stateMachine.attackTarget = stateMachine.focusTarget;
+                state = stateMachine.Transition(EUnitStateMachine.UnitState.OBEYATTACKING);
+            }
+            else if (stateMachine.obeyActionIsGiven && !isInAttackRangeObey)
+            {
+                stateMachine.obeyActionIsGiven = false;
+                
+            }
+        }
+        else
+        {
+            isInAttackRangeObey = false;
+        }
         
+    }
+
+    void ObeyAttackingToObeyMoving()
+    {
+        
+        if (stateMachine.focusTarget == null)
+        {
+            state = stateMachine.Transition(EUnitStateMachine.UnitState.OBEYMOVING);
+        }
+        else if (stateMachine.obeyActionIsGiven)
+        {
+            stateMachine.focusTarget = null;
+            stateMachine.attackTarget = null;
+            state = stateMachine.Transition(EUnitStateMachine.UnitState.OBEYMOVING);
+            
+        }
     }
 
     void IdleToAttacking()
@@ -146,8 +227,9 @@ public class UnitTransition : Transition
             {
                 stateMachine.focusTarget = results[0].gameObject;
                 stateMachine.attackTarget = null;
-
+                Debug.Log("idleToMoving");
                 state = stateMachine.Transition(EUnitStateMachine.UnitState.MOVING);
+                Debug.Log("State = " + state);
             }
         }
 
@@ -159,7 +241,6 @@ public class UnitTransition : Transition
 
         if (Physics.OverlapSphereNonAlloc(uTransform.position, detectRange, results, uLayerMask) == 0)
         {
-            Debug.Log("je passe ici attacktoidle");
             stateMachine.attackTarget = null;
             stateMachine.focusTarget = null;
             state = stateMachine.Transition(EUnitStateMachine.UnitState.IDLE);
@@ -194,20 +275,23 @@ public class UnitTransition : Transition
 
     void AttackToCapaciting()
     {
-        
 
+        if (Input.GetKeyDown(KeyCode.E) && !isOnCooldown)
+        {
+            //
+        }
     }
 
     void MovingToIdle()
     {
 
-        Collider[] results = new Collider[20];
+        Collider[] results = new Collider[1];
 
         if (Physics.OverlapSphereNonAlloc(uTransform.position, detectRange, results, uLayerMask) == 0)
         {
             stateMachine.focusTarget = null;
             stateMachine.attackTarget = null;
-
+            Debug.Log("On passe là ?");
             state = stateMachine.Transition(EUnitStateMachine.UnitState.IDLE);
         }
         
@@ -250,6 +334,8 @@ public class UnitTransition : Transition
         isOnCooldown = false;
 
     }
+
+    
 
 
 

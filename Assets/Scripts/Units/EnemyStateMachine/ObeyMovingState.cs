@@ -2,20 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObeyState : UnitBaseState
+public class ObeyMovingState : UnitBaseState
 {
-    public ObeyState(EUnitStateMachine usm) : base(usm)
+    public ObeyMovingState(EUnitStateMachine usm) : base(usm)
     {
     }
     public override void Enter()
     {
         usm.agent.isStopped = false;
+        usm.attackTarget = null;
         
     }
 
     public override void Update()
     {
-        usm.agent.SetDestination(usm.focusTarget.transform.position);
+        if (usm.agent.remainingDistance < usm.agent.stoppingDistance )
+        {
+            usm.obeyActionIsGiven = false;
+        }
+        
 
 
     }
