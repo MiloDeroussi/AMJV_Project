@@ -12,6 +12,18 @@ PrefabInstance:
       propertyPath: capacityCd
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4047244445083389267, guid: 0f1fadfd11797ec4aba592fe5d8f8ea3, type: 3}
+      propertyPath: capacityRange
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4047244445083389267, guid: 0f1fadfd11797ec4aba592fe5d8f8ea3, type: 3}
+      propertyPath: capacityDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4047244445083389267, guid: 0f1fadfd11797ec4aba592fe5d8f8ea3, type: 3}
+      propertyPath: capacityRadius
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4280605027027923858, guid: 0f1fadfd11797ec4aba592fe5d8f8ea3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.77

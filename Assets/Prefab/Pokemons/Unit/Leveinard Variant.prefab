@@ -26,15 +26,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3509862799415606155, guid: 90893734047e7324cb4c56c11f90ca09, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -47.992805
+      value: -5.21513
       objectReference: {fileID: 0}
     - target: {fileID: 3509862799415606155, guid: 90893734047e7324cb4c56c11f90ca09, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.0000019073486
       objectReference: {fileID: 0}
     - target: {fileID: 3509862799415606155, guid: 90893734047e7324cb4c56c11f90ca09, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.5195823
+      value: -4.8940954
       objectReference: {fileID: 0}
     - target: {fileID: 3509862799415606155, guid: 90893734047e7324cb4c56c11f90ca09, type: 3}
       propertyPath: m_LocalRotation.w
@@ -115,6 +115,14 @@ PrefabInstance:
     - target: {fileID: 8766506291899070495, guid: 90893734047e7324cb4c56c11f90ca09, type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925916667459176740, guid: 90893734047e7324cb4c56c11f90ca09, type: 3}
+      propertyPath: attackDamage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925916667459176740, guid: 90893734047e7324cb4c56c11f90ca09, type: 3}
+      propertyPath: capacityDamage
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4653576479299028412, guid: 90893734047e7324cb4c56c11f90ca09, type: 3}

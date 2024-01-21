@@ -20,6 +20,9 @@ public class Leveinard : Pokemon
     [SerializeField] float capacityDuration;
     [SerializeField] float capacityDamage;  [SerializeField] float attackDamage;
     [SerializeField] float capacityRange;
+    [SerializeField] GameObject[] eggBag;
+    private GameObject egg;
+    private int i;
 
     public override float getAttackCd()
     {
@@ -38,6 +41,7 @@ public class Leveinard : Pokemon
         myAgent = GetComponent<NavMeshAgent>();
         myCam = Camera.main;
         isOnCapacityCooldown = false; isOnAttackCooldown = false;
+        i = 0;
     }
 
     // Update is called once per frame
@@ -51,7 +55,11 @@ public class Leveinard : Pokemon
         if (!isOnAttackCooldown)
         {
             isOnAttackCooldown = true;
-            usm.attackTarget.GetComponent<Health>().damage(attackDamage);
+            egg = eggBag[i];
+            i = (i + 1) % 3;
+            egg.transform.position = transform.position + transform.forward * 2;
+            egg.transform.LookAt(usm.attackTarget.transform.position + Vector3.up * (usm.attackTarget.transform.position - transform.forward).magnitude);
+            egg.SetActive(true);
             StartCoroutine(AttackCooldown(attackCd));
         }
     }
