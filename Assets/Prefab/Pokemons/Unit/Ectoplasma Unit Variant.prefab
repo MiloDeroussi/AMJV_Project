@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7806796590539901575
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4280605027027923858, guid: 0f1fadfd11797ec4aba592fe5d8f8ea3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -53.179985
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280605027027923858, guid: 0f1fadfd11797ec4aba592fe5d8f8ea3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280605027027923858, guid: 0f1fadfd11797ec4aba592fe5d8f8ea3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.113842
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280605027027923858, guid: 0f1fadfd11797ec4aba592fe5d8f8ea3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280605027027923858, guid: 0f1fadfd11797ec4aba592fe5d8f8ea3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280605027027923858, guid: 0f1fadfd11797ec4aba592fe5d8f8ea3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280605027027923858, guid: 0f1fadfd11797ec4aba592fe5d8f8ea3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280605027027923858, guid: 0f1fadfd11797ec4aba592fe5d8f8ea3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280605027027923858, guid: 0f1fadfd11797ec4aba592fe5d8f8ea3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280605027027923858, guid: 0f1fadfd11797ec4aba592fe5d8f8ea3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5998998951588062480, guid: 0f1fadfd11797ec4aba592fe5d8f8ea3, type: 3}
+      propertyPath: m_Name
+      value: Ectoplasma Unit Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5998998951588062480, guid: 0f1fadfd11797ec4aba592fe5d8f8ea3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3662507455471117529}
+    - targetCorrespondingSourceObject: {fileID: 5998998951588062480, guid: 0f1fadfd11797ec4aba592fe5d8f8ea3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5056707215995540673}
+  m_SourcePrefab: {fileID: 100100000, guid: 0f1fadfd11797ec4aba592fe5d8f8ea3, type: 3}
+--- !u!1 &4546359497698078615 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5998998951588062480, guid: 0f1fadfd11797ec4aba592fe5d8f8ea3, type: 3}
+  m_PrefabInstance: {fileID: 7806796590539901575}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3662507455471117529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4546359497698078615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 058543f5c3b795647b14f81c03116f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPatrolling: 0
+  CurrentState: 0
+  attackTarget: {fileID: 0}
+  focusTarget: {fileID: 0}
+  obeyActionIsGiven: 0
+  pokemon: {fileID: 0}
+  agent: {fileID: 0}
+  isEnemy: 0
+  isOnCooldown: 0
+--- !u!114 &5056707215995540673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4546359497698078615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7abefd6da4744c145a517601dc5d1b2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canCapaciting: 0
+  agent: {fileID: 0}
+  uLayerMask:
+    serializedVersion: 2
+    m_Bits: 4096
+  gameManager: {fileID: 0}
+  unitSelectionSystem: {fileID: 0}

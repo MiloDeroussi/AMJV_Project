@@ -7,14 +7,16 @@ public class Buttons : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    [SerializeField] private string PlayScene;
-    [SerializeField] private string SettingsScene;
+    private string PlayScene;
+    private string SettingsScene;
     [SerializeField] private GameManager gameManager;
     private string LevelScene;
 
     void Start()
     {
-        
+        PlayScene = "Rule Screen";
+        SettingsScene = "Settings";
+
     }
 
     // Update is called once per frame

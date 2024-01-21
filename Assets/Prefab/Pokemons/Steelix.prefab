@@ -711,6 +711,7 @@ GameObject:
   - component: {fileID: 1970265698608904032}
   - component: {fileID: 6328769819889452918}
   - component: {fileID: 8135237225315196193}
+  - component: {fileID: 6521512153886136897}
   m_Layer: 11
   m_Name: Steelix
   m_TagString: Untagged
@@ -855,6 +856,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &6521512153886136897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5670918359837201599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 058543f5c3b795647b14f81c03116f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPatrolling: 0
+  CurrentState: 0
+  attackTarget: {fileID: 0}
+  focusTarget: {fileID: 0}
+  obeyActionIsGiven: 0
+  pokemon: {fileID: 0}
+  agent: {fileID: 0}
+  isEnemy: 0
+  isOnCooldown: 0
 --- !u!1 &6158933095879864431
 GameObject:
   m_ObjectHideFlags: 0

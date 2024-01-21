@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
 
     private GameObject king;
-    [SerializeField] GameObject Flag;
     [SerializeField] private UIManager UIManager;
     private string levelName;
     private float difficultyModifier;
