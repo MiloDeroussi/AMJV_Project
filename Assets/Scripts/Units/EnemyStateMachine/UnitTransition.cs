@@ -79,7 +79,7 @@ public class UnitTransition : Transition
     {
         ToObey();
         ToDeath();
-        ToCapaciting();
+       
 
         if (!isObeying)
         {
@@ -105,6 +105,7 @@ public class UnitTransition : Transition
         
         else if (isObeying)
         {
+            ToCapaciting();
             if (stateMachine.CurrentState == EUnitStateMachine.UnitState.OBEYMOVING)
             {
                 ObeyMovingToObeyAttacking();
