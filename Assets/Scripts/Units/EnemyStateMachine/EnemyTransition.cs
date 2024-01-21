@@ -128,7 +128,7 @@ public class EnemyTransition : Transition
 
     void ToRegicing()
     {
-        if (kingManager.getKing() != null)
+        if (kingManager?.getKing() != null)
         {
             isRegicing = true;
             king = kingManager.getKing();

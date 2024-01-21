@@ -14,6 +14,9 @@ public class Archéduc : Pokemon
     public bool isOnAttackCooldown; public bool isOnCapacityCooldown;
     private int i;
     private GameObject fleche;
+    private bool special;
+    private GameObject specialFleche;
+    private int j;
     [SerializeField] float attackRange;
     [SerializeField] float detectRange;
     [SerializeField] float capacityCd;
@@ -22,6 +25,7 @@ public class Archéduc : Pokemon
     [SerializeField] float capacityDamage;[SerializeField] float attackDamage;
     [SerializeField] float capacityRange;
     [SerializeField] private GameObject[] carquois;
+    [SerializeField] private GameObject[] specialCarquois;
 
     public override float getAttackCd()
     {
@@ -41,6 +45,7 @@ public class Archéduc : Pokemon
         myCam = Camera.main;
         isOnCapacityCooldown = false; isOnAttackCooldown = false;
         i = 0;
+        j = 0;
     }
 
     // Update is called once per frame
@@ -53,23 +58,35 @@ public class Archéduc : Pokemon
     {
         if (!isOnAttackCooldown)
         {
-            fleche = carquois[i];
-            fleche.transform.position = transform.forward;
-            fleche.transform.rotation = transform.rotation;
-            fleche.SetActive(true);
+            if (!special)
+            {
+                isOnAttackCooldown = true;
+                fleche = carquois[i];
+                i = (i + 1) % 6;
+                fleche.transform.position = transform.position + transform.forward * 2;
+                fleche.transform.LookAt(usm.attackTarget.transform.position);
+                fleche.SetActive(true);
+                StartCoroutine(AttackCooldown(attackCd));
+            }
+            
+            else
+            {
+                isOnAttackCooldown = true;
+                specialFleche = specialCarquois[j];
+                j = (j + 1) % 6;
+                specialFleche.transform.position = transform.position + transform.forward * 2;
+                specialFleche.transform.LookAt(usm.attackTarget.transform.position);
+                specialFleche.SetActive(true);
+                StartCoroutine(AttackCooldown(attackCd));
+            }
         }
     }
 
     public override void Capacity()
     {
-        if (!isOnAttackCooldown)
+        if (!isOnCapacityCooldown)
         {
-            Collider[] hits = Physics.OverlapSphere(myAgent.nextPosition, capacityRange, targets);
-            foreach (Collider c in hits)
-            {
-                c.GetComponent<Health>().heal(capacityDamage);
-            }
-            StartCoroutine(CapacityCooldown(capacityCd));
+            StartCoroutine(Tranchombre());
         }
 
     }
@@ -84,6 +101,14 @@ public class Archéduc : Pokemon
     {
         yield return new WaitForSeconds(cd);
         isOnCapacityCooldown = false;
+    }
+
+    private IEnumerator Tranchombre()
+    {
+        StartCoroutine(CapacityCooldown(capacityCd));
+        special = true;
+        yield return new WaitForSeconds(capacityDuration);
+        special = false;
     }
 }
 

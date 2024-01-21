@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4475980923365223469, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -28.323647
+      value: -31.4
       objectReference: {fileID: 0}
     - target: {fileID: 4475980923365223469, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.3030815
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4475980923365223469, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.97
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 4475980923365223469, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -47,6 +47,30 @@ PrefabInstance:
     - target: {fileID: 4475980923365223469, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586842105871476193, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
+      propertyPath: attackCd
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586842105871476193, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
+      propertyPath: capacityCd
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586842105871476193, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
+      propertyPath: attackRange
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586842105871476193, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
+      propertyPath: detectRange
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586842105871476193, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
+      propertyPath: capacityDuration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586842105871476193, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
+      propertyPath: specialCarquois.Array.size
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8916915625641725286, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
       propertyPath: m_Name
@@ -85,21 +109,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ground:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   targets:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4096
   isOnAttackCooldown: 0
   isOnCapacityCooldown: 0
   attackRange: 0
   detectRange: 0
   capacityCd: 0
-  attackCd: 0
+  attackCd: 1
   capacityDuration: 0
   capacityDamage: 0
   attackDamage: 0
   capacityRange: 0
   carquois: []
+  specialCarquois: []
 --- !u!114 &4341727790342387273
 MonoBehaviour:
   m_ObjectHideFlags: 0

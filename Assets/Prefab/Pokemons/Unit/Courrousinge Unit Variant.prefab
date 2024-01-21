@@ -8,21 +8,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 140785311524269351, guid: 77cdeff68d054a8428d568084c82ba7d, type: 3}
+      propertyPath: capacityCd
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 140785311524269351, guid: 77cdeff68d054a8428d568084c82ba7d, type: 3}
+      propertyPath: attackRange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 140785311524269351, guid: 77cdeff68d054a8428d568084c82ba7d, type: 3}
+      propertyPath: detectRange
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 552931270734289943, guid: 77cdeff68d054a8428d568084c82ba7d, type: 3}
       propertyPath: m_Name
       value: Courrousinge Unit Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1145194811980199453, guid: 77cdeff68d054a8428d568084c82ba7d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -63.91822
+      value: -8.911808
       objectReference: {fileID: 0}
     - target: {fileID: 1145194811980199453, guid: 77cdeff68d054a8428d568084c82ba7d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0000019073486
+      value: -0.0000038146973
       objectReference: {fileID: 0}
     - target: {fileID: 1145194811980199453, guid: 77cdeff68d054a8428d568084c82ba7d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.679784
+      value: -8.558481
       objectReference: {fileID: 0}
     - target: {fileID: 1145194811980199453, guid: 77cdeff68d054a8428d568084c82ba7d, type: 3}
       propertyPath: m_LocalRotation.w

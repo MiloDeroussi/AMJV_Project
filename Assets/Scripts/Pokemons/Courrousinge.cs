@@ -62,6 +62,7 @@ public class Courrousinge : Pokemon
         if (!isOnCapacityCooldown)
         {
             isOnCapacityCooldown = true;
+            Debug.Log(usm.attackTarget);
             float initialHp = usm.attackTarget.GetComponent<Health>().getHealth();
             damage = 2 + 1 * (maxHealth - GetComponent<Health>().getHealth()) / 2;
             usm.attackTarget.GetComponent<Health>().damage(damage);
