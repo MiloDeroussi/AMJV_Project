@@ -325,7 +325,6 @@ public class UnitTransition : Transition
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            EUnitStateMachine.UnitState prevState = state;
             state = stateMachine.Transition(EUnitStateMachine.UnitState.CAPACITING);
 
             

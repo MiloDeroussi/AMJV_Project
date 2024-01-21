@@ -5,7 +5,7 @@ using UnityEngine;
 public class Fléche : MonoBehaviour
 {
     private Rigidbody rb;
-    private bool active;
+    [SerializeField] bool active;
     private Vector3 spawn;
     [SerializeField] float speed;
     [SerializeField] float range;
@@ -22,8 +22,8 @@ public class Fléche : MonoBehaviour
         if (!active)
         {
             spawn = transform.position;
-            active = true;
             rb.velocity = transform.forward * speed;
+            active = true;
         }
 
         if ((transform.position - spawn).sqrMagnitude > range)
