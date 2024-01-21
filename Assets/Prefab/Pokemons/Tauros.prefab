@@ -554,6 +554,7 @@ GameObject:
   - component: {fileID: 4542980490662713670}
   - component: {fileID: 7809972810685784460}
   - component: {fileID: 2286396083247256066}
+  - component: {fileID: 3501131659911929446}
   m_Layer: 11
   m_Name: Tauros
   m_TagString: Untagged
@@ -689,11 +690,17 @@ MonoBehaviour:
   targets:
     serializedVersion: 2
     m_Bits: 4096
+  isOnAttackCooldown: 0
+  isOnCapacityCooldown: 0
   attackRange: 0
   detectRange: 0
   capacityCd: 0
   attackCd: 1.67
   capacityDuration: 0
+  capacityRange: 0
+  capacityRadius: 0
+  capacityDamage: 0
+  attackDamage: 0
 --- !u!54 &2286396083247256066
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -721,6 +728,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &3501131659911929446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4538439966124305700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 058543f5c3b795647b14f81c03116f4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPatrolling: 0
+  CurrentState: 0
+  attackTarget: {fileID: 0}
+  focusTarget: {fileID: 0}
+  obeyActionIsGiven: 0
+  pokemon: {fileID: 0}
+  agent: {fileID: 0}
+  isEnemy: 0
+  isOnCooldown: 0
 --- !u!1 &5196163128529407652
 GameObject:
   m_ObjectHideFlags: 0
