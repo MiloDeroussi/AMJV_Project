@@ -12,7 +12,8 @@ public class Archéduc : Pokemon
     public LayerMask ground;
     public LayerMask targets;
     public bool isOnAttackCooldown; public bool isOnCapacityCooldown;
-    private float damage;
+    private int i;
+    private GameObject fleche;
     [SerializeField] float attackRange;
     [SerializeField] float detectRange;
     [SerializeField] float capacityCd;
@@ -39,6 +40,7 @@ public class Archéduc : Pokemon
         myAgent = GetComponent<NavMeshAgent>();
         myCam = Camera.main;
         isOnCapacityCooldown = false; isOnAttackCooldown = false;
+        i = 0;
     }
 
     // Update is called once per frame
@@ -51,9 +53,10 @@ public class Archéduc : Pokemon
     {
         if (!isOnAttackCooldown)
         {
-            isOnAttackCooldown = true;
-            usm.attackTarget.GetComponent<Health>().damage(attackDamage);
-            StartCoroutine(AttackCooldown(attackCd));
+            fleche = carquois[i];
+            fleche.transform.position = transform.forward;
+            fleche.transform.rotation = transform.rotation;
+            fleche.SetActive(true);
         }
     }
 

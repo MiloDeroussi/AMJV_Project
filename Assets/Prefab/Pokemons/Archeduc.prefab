@@ -885,6 +885,7 @@ GameObject:
   - component: {fileID: 4515982646346756601}
   - component: {fileID: 7387752695756867187}
   - component: {fileID: -791375507677752654}
+  - component: {fileID: 6586842105871476193}
   m_Layer: 11
   m_Name: Archeduc
   m_TagString: Untagged
@@ -1029,6 +1030,41 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &6586842105871476193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8916915625641725286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2d8467de6db28b4aabe5cad9dbe2731, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ground:
+    serializedVersion: 2
+    m_Bits: 0
+  targets:
+    serializedVersion: 2
+    m_Bits: 0
+  isOnAttackCooldown: 0
+  isOnCapacityCooldown: 0
+  attackRange: 0
+  detectRange: 0
+  capacityCd: 0
+  attackCd: 0
+  capacityDuration: 0
+  capacityDamage: 0
+  attackDamage: 0
+  capacityRange: 0
+  carquois:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &8959192831196202206
 GameObject:
   m_ObjectHideFlags: 0

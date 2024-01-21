@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fléche : MonoBehaviour
+public class SpecialFleche : MonoBehaviour
 {
     private Rigidbody rb;
     private bool active;
     private Vector3 spawn;
+    private int hits;
     [SerializeField] float speed;
     [SerializeField] float range;
     // Start is called before the first frame update
@@ -23,10 +24,17 @@ public class Fléche : MonoBehaviour
         {
             spawn = transform.position;
             active = true;
+            hits = 0;
             rb.velocity = transform.forward * speed;
         }
 
         if ((transform.position - spawn).sqrMagnitude > range)
+        {
+            active = false;
+            this.gameObject.SetActive(false);
+        }
+
+        if (hits == 3)
         {
             active = false;
             this.gameObject.SetActive(false);
@@ -36,7 +44,5 @@ public class Fléche : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         other.GetComponent<Health>().damage(5);
-        active = false;
-        this.gameObject.SetActive(false);
     }
 }
