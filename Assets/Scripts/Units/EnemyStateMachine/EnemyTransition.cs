@@ -24,7 +24,7 @@ public class EnemyTransition : Transition
     private float detectRange;
     private float patrolRange;
 
-    private float cd;
+    
     private float capacityDuration;
 
 
@@ -61,7 +61,7 @@ public class EnemyTransition : Transition
         //Les variables suivantes seront à récupérer sur notre unité
         attackRange = 5f;
         detectRange = 15f;
-        cd = 25f;
+        
         capacityDuration = 2f;
 
         canCapaciting = false;

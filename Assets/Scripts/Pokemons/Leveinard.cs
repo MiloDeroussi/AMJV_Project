@@ -21,12 +21,12 @@ public class Leveinard : Pokemon
     [SerializeField] float capacityDamage;  [SerializeField] float attackDamage;
     [SerializeField] float capacityRange;
 
-    public float getAttackCd()
+    public override float getAttackCd()
     {
         return attackCd;
     }
 
-    public float getCooldown()
+    public override float getCooldown()
     {
         return capacityCd;
     }

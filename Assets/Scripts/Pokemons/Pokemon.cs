@@ -21,4 +21,8 @@ public abstract class Pokemon : MonoBehaviour
     abstract public void Attack();
 
     abstract public void Capacity();
+
+    abstract public float getAttackCd();
+
+    abstract public float getCooldown();
 }

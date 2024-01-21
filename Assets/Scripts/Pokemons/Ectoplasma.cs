@@ -23,12 +23,12 @@ public class Ectoplasma : Pokemon
     [SerializeField] float capacityDamage;
     // Start is called before the first frame update
 
-    public float getAttackCd()
+    public override float getAttackCd()
     {
         return attackCd;
     }
 
-    public float getCooldown()
+    public override float getCooldown()
     {
         return capacityCd;
     }

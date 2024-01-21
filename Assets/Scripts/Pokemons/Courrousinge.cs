@@ -20,12 +20,12 @@ public class Courrousinge : Pokemon
     [SerializeField] float attackCd;
     [SerializeField] float capacityDuration;
 
-    public float getAttackCd()
+    public override float getAttackCd()
     {
         return attackCd;
     }
 
-    public float getCooldown()
+    public override float getCooldown()
     {
         return capacityCd;
     }

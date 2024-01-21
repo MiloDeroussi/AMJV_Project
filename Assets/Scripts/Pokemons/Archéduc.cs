@@ -22,12 +22,12 @@ public class Archéduc : Pokemon
     [SerializeField] float capacityRange;
     [SerializeField] private GameObject[] carquois;
 
-    public float getAttackCd()
+    public override float getAttackCd()
     {
         return attackCd;
     }
 
-    public float getCooldown()
+    public override float getCooldown()
     {
         return capacityCd;
     }

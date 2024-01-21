@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
 
     private GameObject king;
     [SerializeField] GameObject Flag;
+    [SerializeField] private UIManager UIManager;
+    private string levelName;
+    private float difficultyModifier;
 
     public GameObject GetKing()
     {
@@ -21,12 +24,22 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        
+        DontDestroyOnLoad(this);
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public float getDifficultyModifier()
+    {
+        return difficultyModifier;
+    }
+
+    public string getLevelName()
+    {
+        return levelName;
     }
 }

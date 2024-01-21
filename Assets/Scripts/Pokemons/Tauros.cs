@@ -24,12 +24,12 @@ public class Tauros : Pokemon
     [SerializeField] float capacityRadius;
     [SerializeField] float capacityDamage;
     [SerializeField] float attackDamage;
-    public float getAttackCd()
+    public override float getAttackCd()
     {
         return attackCd;
     }
 
-    public float getCooldown()
+    public override float getCooldown()
     {
         return capacityCd;
     }

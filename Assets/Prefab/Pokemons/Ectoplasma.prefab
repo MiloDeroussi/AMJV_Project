@@ -687,11 +687,16 @@ MonoBehaviour:
   targets:
     serializedVersion: 2
     m_Bits: 4096
+  isOnAttackCooldown: 0
+  isOnCapacityCooldown: 0
   attackRange: 0
   detectRange: 0
   capacityCd: 0
   attackCd: 1
   capacityDuration: 0
+  capacityRange: 0
+  capacityRadius: 0
+  capacityDamage: 0
 --- !u!54 &3555645652766479943
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1144,7 +1149,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 353951087440032704, guid: 78a606d602621cc47873e7ff7e1f418c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 353951087440032704, guid: 78a606d602621cc47873e7ff7e1f418c, type: 3}
       propertyPath: m_LocalPosition.y
