@@ -15,6 +15,7 @@ public class CapacitingState : UnitBaseState
 
     public override void Update()
     {
+        usm.attackTarget = usm.focusTarget;
         usm.pokemon.Capacity();
     }
 
