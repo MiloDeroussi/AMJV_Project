@@ -66,7 +66,7 @@ public class Leveinard : Pokemon
 
     public override void Capacity()
     {
-        if (!isOnAttackCooldown)
+        if (!isOnCapacityCooldown)
         {
             Collider[] hits = Physics.OverlapSphere(myAgent.nextPosition, capacityRange, targets);
             foreach (Collider c in hits)

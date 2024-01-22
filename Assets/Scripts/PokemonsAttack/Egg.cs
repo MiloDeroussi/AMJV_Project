@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class Egg : MonoBehaviour
 {
@@ -27,10 +28,15 @@ public class Egg : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 12 )
+        Collider[] hits = Physics.OverlapSphere(transform.position, 5);
+        foreach (Collider c in hits)
         {
-            other.GetComponent<Health>().damage(5);
+            if (c.gameObject.layer == 12)
+            {
+                c.GetComponent<Health>().damage(5);
+            }
         }
+
         active = false;
         this.gameObject.SetActive(false);
     }

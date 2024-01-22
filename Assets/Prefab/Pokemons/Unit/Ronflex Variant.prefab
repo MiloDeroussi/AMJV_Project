@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5829455576027263552, guid: 23acba26e427b96438c8b08a950a8fad, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -43.55388
+      value: -4.43
       objectReference: {fileID: 0}
     - target: {fileID: 5829455576027263552, guid: 23acba26e427b96438c8b08a950a8fad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5829455576027263552, guid: 23acba26e427b96438c8b08a950a8fad, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.683904
+      value: -3.69
       objectReference: {fileID: 0}
     - target: {fileID: 5829455576027263552, guid: 23acba26e427b96438c8b08a950a8fad, type: 3}
       propertyPath: m_LocalRotation.w
@@ -47,6 +47,22 @@ PrefabInstance:
     - target: {fileID: 5829455576027263552, guid: 23acba26e427b96438c8b08a950a8fad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6674378294854345941, guid: 23acba26e427b96438c8b08a950a8fad, type: 3}
+      propertyPath: capacityCd
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6674378294854345941, guid: 23acba26e427b96438c8b08a950a8fad, type: 3}
+      propertyPath: attackDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6674378294854345941, guid: 23acba26e427b96438c8b08a950a8fad, type: 3}
+      propertyPath: capacityDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6674378294854345941, guid: 23acba26e427b96438c8b08a950a8fad, type: 3}
+      propertyPath: capacityDuration
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7142646266710879669, guid: 23acba26e427b96438c8b08a950a8fad, type: 3}
       propertyPath: isOnCooldown

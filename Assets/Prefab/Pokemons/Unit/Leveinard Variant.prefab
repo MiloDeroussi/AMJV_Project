@@ -121,8 +121,16 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8925916667459176740, guid: 90893734047e7324cb4c56c11f90ca09, type: 3}
+      propertyPath: capacityRange
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925916667459176740, guid: 90893734047e7324cb4c56c11f90ca09, type: 3}
       propertyPath: capacityDamage
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925916667459176740, guid: 90893734047e7324cb4c56c11f90ca09, type: 3}
+      propertyPath: eggBag.Array.size
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4653576479299028412, guid: 90893734047e7324cb4c56c11f90ca09, type: 3}

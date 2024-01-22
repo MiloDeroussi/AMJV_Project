@@ -43,6 +43,9 @@ public class SpecialFleche : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        other.GetComponent<Health>().damage(5);
+        if (other.gameObject.layer == 12)
+        {
+            other.GetComponent<Health>().damage(5);
+        }
     }
 }

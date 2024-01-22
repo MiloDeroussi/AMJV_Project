@@ -35,7 +35,10 @@ public class Fléche : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        other.GetComponent<Health>().damage(5);
+        if (other.gameObject.layer == 12)
+        {
+            other.GetComponent<Health>().damage(5);
+        }
         active = false;
         this.gameObject.SetActive(false);
     }
