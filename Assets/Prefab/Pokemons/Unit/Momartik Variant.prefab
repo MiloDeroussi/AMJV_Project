@@ -16,9 +16,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Momartik Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5298097412009383277, guid: acaa2408aba0dc44ca39ed876fa11651, type: 3}
+      propertyPath: capacityDamage
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8756766703893843010, guid: acaa2408aba0dc44ca39ed876fa11651, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.32
+      value: -6.108966
       objectReference: {fileID: 0}
     - target: {fileID: 8756766703893843010, guid: acaa2408aba0dc44ca39ed876fa11651, type: 3}
       propertyPath: m_LocalPosition.y
@@ -26,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8756766703893843010, guid: acaa2408aba0dc44ca39ed876fa11651, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.2
+      value: -5.2455616
       objectReference: {fileID: 0}
     - target: {fileID: 8756766703893843010, guid: acaa2408aba0dc44ca39ed876fa11651, type: 3}
       propertyPath: m_LocalRotation.w
