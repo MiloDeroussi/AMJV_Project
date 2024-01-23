@@ -30,6 +30,7 @@ public class Unit : MonoBehaviour
         if (this.gameObject.layer == 11)
         {
             UnitSelections.Instance.unitList.Remove(this.gameObject);
+            UnitSelections.Instance.unitSelected.Remove(this.gameObject);
         }
         else if (this.gameObject.layer == 12)
         {
