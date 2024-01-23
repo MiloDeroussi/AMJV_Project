@@ -713,6 +713,7 @@ GameObject:
   - component: {fileID: 8135237225315196193}
   - component: {fileID: 6521512153886136897}
   - component: {fileID: -8655599187779229963}
+  - component: {fileID: -4249673610809239707}
   m_Layer: 11
   m_Name: Steelix
   m_TagString: Untagged
@@ -890,6 +891,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 848bd48643ec6e442afa9ef29f7d46d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-4249673610809239707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5670918359837201599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7abefd6da4744c145a517601dc5d1b2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canCapaciting: 0
+  agent: {fileID: 0}
+  uLayerMask:
+    serializedVersion: 2
+    m_Bits: 4096
+  gameManager: {fileID: 0}
+  unitSelectionSystem: {fileID: 0}
 --- !u!1 &6158933095879864431
 GameObject:
   m_ObjectHideFlags: 0
