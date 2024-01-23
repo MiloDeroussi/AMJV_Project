@@ -15,14 +15,17 @@ public class InGameUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI Enemies;
     private List<GameObject> enemiesList;
     private int nbEnemiesLeft;
+
+    private List<GameObject> unitSelectedList;
     [SerializeField] private GameObject[] slots;
 
     // Start is called before the first frame update
     void Start()
     {
         Enemies.SetText("Enemies Left: ");
-        Temps.SetText(minutes + ":" + secondes);
+        Temps.SetText(dixMinutes + minutes + ":" + dixSecondes + secondes);
         enemiesList = unitSelections.GetEnemiesList();
+        unitSelectedList = unitSelections.GetSelectedList();
         StartCoroutine(Minuteur());
         
     }
@@ -33,6 +36,16 @@ public class InGameUI : MonoBehaviour
         nbEnemiesLeft = enemiesList.Count;
         Enemies.SetText("Enemies Left: " + nbEnemiesLeft);
         Temps.SetText(dixMinutes + minutes + ":" + dixSecondes + secondes);
+        int compteur = 0;
+        foreach (GameObject slots in slots)
+        {
+            if (unitSelectedList.Count >= compteur)
+            {
+                slots.transform.Find(unitSelectedList[compteur].gameObject.GetComponent<Pokemon>().name).gameObject.SetActive(true);
+            }
+            
+            compteur++;
+        }
     }
 
     private IEnumerator Minuteur()
