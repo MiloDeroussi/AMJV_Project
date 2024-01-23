@@ -24,6 +24,7 @@ public class Momartik : Pokemon
     [SerializeField] float capacityRadius;
     [SerializeField] float capacityDamage;
     [SerializeField] float attackDamage;
+    [SerializeField] GameObject blizzard;
     public override float getAttackCd()
     {
         return attackCd;
@@ -94,15 +95,19 @@ public class Momartik : Pokemon
     {
         isOnCapacityCooldown = true;
         float i = 10;
+        blizzard.transform.position = usm.attackTarget.transform.position;
+        blizzard.SetActive(true);
         while (i > 0)
         {
             Collider[] hits = Physics.OverlapSphere(usm.attackTarget.transform.position, capacityRadius, targets);
             foreach (Collider c in hits)
             {
+                blizzard.transform.position = usm.attackTarget.transform.position;
                 StartCoroutine(Slow(2f, c.GetComponent<NavMeshAgent>()));   
             }
             i--;
             yield return new WaitForSeconds(capacityDuration/10);
         }
+        blizzard.SetActive(false);
     }
 }
