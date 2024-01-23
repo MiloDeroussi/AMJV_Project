@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
-public class Fléche : MonoBehaviour
+public class Egg : MonoBehaviour
 {
     private Rigidbody rb;
     [SerializeField] bool active;
     private Vector3 spawn;
-    [SerializeField] float speed;
-    [SerializeField] float range;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,23 +21,22 @@ public class Fléche : MonoBehaviour
         if (!active)
         {
             spawn = transform.position;
-            rb.velocity = transform.forward * speed;
+            rb.velocity = (transform.forward * 7);
             active = true;
-        }
-
-        if ((transform.position - spawn).sqrMagnitude > range)
-        {
-            active = false;
-            this.gameObject.SetActive(false);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 12)
+        Collider[] hits = Physics.OverlapSphere(transform.position, 5);
+        foreach (Collider c in hits)
         {
-            other.GetComponent<Health>().damage(5);
+            if (c.gameObject.layer == 12)
+            {
+                c.GetComponent<Health>().damage(5);
+            }
         }
+
         active = false;
         this.gameObject.SetActive(false);
     }
