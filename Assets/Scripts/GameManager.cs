@@ -1,15 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
 
     private GameObject king;
-    [SerializeField] private UIManager UIManager;
+    private RulesManager ruleManager;
+    [SerializeField] private AudioSource music;
+    
     private string levelName;
     private float difficultyModifier;
+
+    private void Awake()
+    {
+        int numGameManager = FindObjectsOfType<GameManager>().Length;
+        if (numGameManager != 1)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(this);
+        }
+    }
 
     public GameObject GetKing()
     {
@@ -23,22 +40,18 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        DontDestroyOnLoad(this);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public float getDifficultyModifier()
     {
         return difficultyModifier;
     }
+    
 
-    public string getLevelName()
-    {
-        return levelName;
-    }
 }

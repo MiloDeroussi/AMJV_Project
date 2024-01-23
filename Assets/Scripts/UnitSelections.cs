@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UnitSelections : MonoBehaviour
 {
-    [SerializeField] public List<GameObject> unitList = new List<GameObject>();
+    [SerializeField] public List<GameObject> unitList = new List<GameObject>();[SerializeField] public List<GameObject> EnemyList = new List<GameObject>();
     [SerializeField] public List<GameObject> unitSelected = new List<GameObject>();
 
     private static UnitSelections _instance;
@@ -75,5 +75,9 @@ public class UnitSelections : MonoBehaviour
     public List<GameObject> GetSelectedList()
     {
         return unitSelected;
+    } 
+    public List<GameObject> GetEnemiesList()
+    {
+        return EnemyList;
     }
 }

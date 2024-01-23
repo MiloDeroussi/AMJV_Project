@@ -7,16 +7,21 @@ public class Buttons : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    private string PlayScene;
-    private string SettingsScene;
-    [SerializeField] private GameManager gameManager;
+
     private string LevelScene;
+
+    
+    private string AudioSettingsScene;
+    private string GraphicsSettingsScene;
+    private string RuleScene;
+    private string TitleScene;
 
     void Start()
     {
-        PlayScene = "Rule Screen";
-        SettingsScene = "Settings";
-
+        AudioSettingsScene = "Audio Settings";
+        GraphicsSettingsScene = "Graphic Settings";
+        RuleScene = "Rule Screen";
+        TitleScene = "Main Title";
     }
 
     // Update is called once per frame
@@ -27,12 +32,17 @@ public class Buttons : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene(PlayScene);
+        SceneManager.LoadScene(RuleScene);
     }
 
-    public void Settings()
+    public void AudioSettings()
     {
-        SceneManager.LoadScene(SettingsScene);
+        SceneManager.LoadScene(AudioSettingsScene);
+    }
+
+    public void GraphicSettings()
+    {
+        SceneManager.LoadScene(GraphicsSettingsScene);
     }
 
     public void Quit()
@@ -41,7 +51,17 @@ public class Buttons : MonoBehaviour
     }
     public void LaunchLevel()
     {
-        LevelScene = gameManager.getLevelName();
+        
         SceneManager.LoadScene(LevelScene);
+    }
+
+    public void BackToTitle()
+    {
+        SceneManager.LoadScene(TitleScene);
+    }
+
+    public void SetLevelScene(string level)
+    {
+        LevelScene = level;
     }
 }
