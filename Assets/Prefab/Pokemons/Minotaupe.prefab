@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 8127354048692449368}
   - component: {fileID: -2539181984077492998}
   - component: {fileID: -4991312632992401693}
+  - component: {fileID: -2028318849964800835}
   m_Layer: 11
   m_Name: Minotaupe
   m_TagString: Untagged
@@ -294,6 +295,18 @@ MonoBehaviour:
   agent: {fileID: 0}
   isEnemy: 0
   isOnCooldown: 0
+--- !u!114 &-2028318849964800835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362229311664160306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e1aed09f7b661947809d617169056af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2319709321451006111
 GameObject:
   m_ObjectHideFlags: 0
