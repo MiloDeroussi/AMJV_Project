@@ -66,10 +66,7 @@ public class Tauros : Pokemon
         if (!isOnCapacityCooldown)
         {
             isOnCapacityCooldown = true;
-            float initialHp = usm.attackTarget.GetComponent<Health>().getHealth();
-            damage = 2 + 1 * (maxHealth - GetComponent<Health>().getHealth()) / 2;
-            usm.attackTarget.GetComponent<Health>().damage(damage);
-            GetComponent<Health>().heal(initialHp - usm.attackTarget.GetComponent<Health>().getHealth());
+            StartCoroutine(Taurogne(capacityDuration));
             StartCoroutine(CapacityCooldown(capacityCd));
         }
     }
@@ -83,6 +80,16 @@ public class Tauros : Pokemon
     private IEnumerator CapacityCooldown(float cd)
     {
         yield return new WaitForSeconds(cd);
+        isOnCapacityCooldown = false;
+    }
+
+    private IEnumerator Taurogne(float duration)
+    {
+        myAgent.speed = myAgent.speed * 2;
+        attackDamage = attackDamage * 2;
+        yield return new WaitForSeconds(duration);
+        myAgent.speed = myAgent.speed / 2;
+        attackDamage = attackDamage / 2;
         isOnCapacityCooldown = false;
     }
 

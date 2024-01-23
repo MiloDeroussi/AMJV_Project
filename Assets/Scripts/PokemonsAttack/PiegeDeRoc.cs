@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using static UnityEngine.GraphicsBuffer;
 
 public class PiegeDeRoc : MonoBehaviour
@@ -27,7 +28,7 @@ public class PiegeDeRoc : MonoBehaviour
     {
         if (other.gameObject.layer == 11)
         {
-            float damage = other.GetComponent<Rigidbody>().velocity.magnitude * 0.5f;
+            float damage = other.GetComponent<NavMeshAgent>().velocity.magnitude * 0.3f;
             other.GetComponent<Health>().damage(damage);
             active = false;
         }
