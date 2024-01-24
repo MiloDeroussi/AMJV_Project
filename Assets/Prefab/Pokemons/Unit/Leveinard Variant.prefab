@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 3405493545565156246, guid: 90893734047e7324cb4c56c11f90ca09, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3498076115352722424, guid: 90893734047e7324cb4c56c11f90ca09, type: 3}
       propertyPath: m_Layer
       value: 11
@@ -88,6 +92,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 5931298535213210504, guid: 90893734047e7324cb4c56c11f90ca09, type: 3}
+      propertyPath: ennemy.m_Bits
+      value: 4096
+      objectReference: {fileID: 0}
     - target: {fileID: 6309949299846709641, guid: 90893734047e7324cb4c56c11f90ca09, type: 3}
       propertyPath: m_Layer
       value: 11
@@ -112,13 +120,33 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 8722224620102375085, guid: 90893734047e7324cb4c56c11f90ca09, type: 3}
+      propertyPath: isEnemy
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8766506291899070495, guid: 90893734047e7324cb4c56c11f90ca09, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8925916667459176740, guid: 90893734047e7324cb4c56c11f90ca09, type: 3}
+      propertyPath: attackCd
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925916667459176740, guid: 90893734047e7324cb4c56c11f90ca09, type: 3}
+      propertyPath: capacityCd
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925916667459176740, guid: 90893734047e7324cb4c56c11f90ca09, type: 3}
+      propertyPath: attackRange
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925916667459176740, guid: 90893734047e7324cb4c56c11f90ca09, type: 3}
+      propertyPath: detectRange
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925916667459176740, guid: 90893734047e7324cb4c56c11f90ca09, type: 3}
       propertyPath: attackDamage
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8925916667459176740, guid: 90893734047e7324cb4c56c11f90ca09, type: 3}
       propertyPath: capacityRange

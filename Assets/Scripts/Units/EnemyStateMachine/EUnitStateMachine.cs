@@ -46,15 +46,15 @@ public class EUnitStateMachine: MonoBehaviour
     {
         unit = this.gameObject;
         initialPosition = unit.transform.position;
-        
-        attackRange = 5f;
-        detectRange = 15f;
+        pokemon = GetComponent<Pokemon>();
+        attackRange = pokemon.getAttackRange();
+        detectRange = pokemon.getDetectRange();
         patrolRange = 25f;
 
         attackTarget = null;
         focusTarget = null;
         agent = this.GetComponent<NavMeshAgent>();
-        pokemon = GetComponent<Pokemon>();
+        
         //Les variables suivantes seront à récupérer sur notre unité
 
 
@@ -85,6 +85,16 @@ public class EUnitStateMachine: MonoBehaviour
         }
         
         stateDictionary[CurrentState].Enter();
+    }
+
+    public float getAttackRange()
+    {
+        return attackRange;
+    }
+
+    public float getDetectRange()
+    {
+        return detectRange;
     }
 
     public bool GetIsEnemy()

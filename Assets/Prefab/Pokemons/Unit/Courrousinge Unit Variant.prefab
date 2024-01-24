@@ -8,17 +8,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8736239233333304078, guid: 77cdeff68d054a8428d568084c82ba7d, type: 3}
+      propertyPath: isEnemy
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 140785311524269351, guid: 77cdeff68d054a8428d568084c82ba7d, type: 3}
       propertyPath: capacityCd
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 140785311524269351, guid: 77cdeff68d054a8428d568084c82ba7d, type: 3}
       propertyPath: attackRange
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 140785311524269351, guid: 77cdeff68d054a8428d568084c82ba7d, type: 3}
       propertyPath: detectRange
-      value: 50
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 552931270734289943, guid: 77cdeff68d054a8428d568084c82ba7d, type: 3}
       propertyPath: m_Name
@@ -63,6 +67,14 @@ PrefabInstance:
     - target: {fileID: 1145194811980199453, guid: 77cdeff68d054a8428d568084c82ba7d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5349097493880918176, guid: 77cdeff68d054a8428d568084c82ba7d, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9185754590130091326, guid: 77cdeff68d054a8428d568084c82ba7d, type: 3}
+      propertyPath: ennemy.m_Bits
+      value: 4096
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

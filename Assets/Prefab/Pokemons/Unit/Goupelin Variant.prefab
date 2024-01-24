@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 511346575427860394, guid: 67464532f3b8f0242bc3d92bd48fc93b, type: 3}
+      propertyPath: ennemy.m_Bits
+      value: 4096
+      objectReference: {fileID: 0}
     - target: {fileID: 1166556659211798266, guid: 67464532f3b8f0242bc3d92bd48fc93b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.18
@@ -52,21 +56,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goupelin Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 6198746083067303726, guid: 67464532f3b8f0242bc3d92bd48fc93b, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6462648020521479638, guid: 67464532f3b8f0242bc3d92bd48fc93b, type: 3}
       propertyPath: attackCd
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 6462648020521479638, guid: 67464532f3b8f0242bc3d92bd48fc93b, type: 3}
       propertyPath: capacityCd
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6462648020521479638, guid: 67464532f3b8f0242bc3d92bd48fc93b, type: 3}
       propertyPath: attackRange
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6462648020521479638, guid: 67464532f3b8f0242bc3d92bd48fc93b, type: 3}
       propertyPath: detectRange
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6462648020521479638, guid: 67464532f3b8f0242bc3d92bd48fc93b, type: 3}
       propertyPath: attackDamage
@@ -77,6 +85,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6462648020521479638, guid: 67464532f3b8f0242bc3d92bd48fc93b, type: 3}
+      propertyPath: ground.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462648020521479638, guid: 67464532f3b8f0242bc3d92bd48fc93b, type: 3}
       propertyPath: capacityDamage
       value: 5
       objectReference: {fileID: 0}
@@ -85,12 +97,20 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6462648020521479638, guid: 67464532f3b8f0242bc3d92bd48fc93b, type: 3}
+      propertyPath: targets.m_Bits
+      value: 4096
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462648020521479638, guid: 67464532f3b8f0242bc3d92bd48fc93b, type: 3}
       propertyPath: capacityDuration
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6462648020521479638, guid: 67464532f3b8f0242bc3d92bd48fc93b, type: 3}
       propertyPath: fireballs.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210651809617877157, guid: 67464532f3b8f0242bc3d92bd48fc93b, type: 3}
+      propertyPath: isEnemy
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

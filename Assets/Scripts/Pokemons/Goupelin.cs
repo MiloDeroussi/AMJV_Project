@@ -15,8 +15,7 @@ public class Goupelin : Pokemon
     public bool isOnCapacityCooldown;
     private float damage;
     private float maxHealth;
-    [SerializeField] float attackRange;
-    [SerializeField] float detectRange;
+
     [SerializeField] float capacityCd;
     [SerializeField] float attackCd;
     [SerializeField] float capacityDuration;
@@ -86,4 +85,6 @@ public class Goupelin : Pokemon
         yield return new WaitForSeconds(cd);
         isOnCapacityCooldown = false;
     }
+
+
 }

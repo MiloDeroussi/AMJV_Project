@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1863225716070339044, guid: 23acba26e427b96438c8b08a950a8fad, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4679527037055585543, guid: 23acba26e427b96438c8b08a950a8fad, type: 3}
+      propertyPath: ennemy.m_Bits
+      value: 4096
+      objectReference: {fileID: 0}
     - target: {fileID: 5829455576027263552, guid: 23acba26e427b96438c8b08a950a8fad, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.43
@@ -53,6 +61,14 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6674378294854345941, guid: 23acba26e427b96438c8b08a950a8fad, type: 3}
+      propertyPath: attackRange
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6674378294854345941, guid: 23acba26e427b96438c8b08a950a8fad, type: 3}
+      propertyPath: detectRange
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 6674378294854345941, guid: 23acba26e427b96438c8b08a950a8fad, type: 3}
       propertyPath: attackDamage
       value: 5
       objectReference: {fileID: 0}
@@ -63,6 +79,10 @@ PrefabInstance:
     - target: {fileID: 6674378294854345941, guid: 23acba26e427b96438c8b08a950a8fad, type: 3}
       propertyPath: capacityDuration
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142646266710879669, guid: 23acba26e427b96438c8b08a950a8fad, type: 3}
+      propertyPath: isEnemy
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7142646266710879669, guid: 23acba26e427b96438c8b08a950a8fad, type: 3}
       propertyPath: isOnCooldown

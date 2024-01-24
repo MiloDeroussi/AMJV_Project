@@ -63,10 +63,10 @@ public class UnitTransition : Transition
         agent = this.GetComponent<NavMeshAgent>();
 
         //Les variables suivantes seront à récupérer sur notre unité
-        attackRange = 5f;
-        detectRange = 15f;
-        cd = 25f;
-        capacityDuration = 2f;
+        attackRange = stateMachine.getAttackRange();
+        Debug.Log(stateMachine.pokemon.name + ": " + attackRange);
+        detectRange = stateMachine.getDetectRange();
+
 
         canCapaciting = false;
 
@@ -79,7 +79,12 @@ public class UnitTransition : Transition
     {
         ToObey();
         ToDeath();
-       
+        if (attackRange == 0 || detectRange == 0)
+        {
+            attackRange = stateMachine.getAttackRange();
+            Debug.Log(stateMachine.pokemon.name + ": " + attackRange);
+            detectRange = stateMachine.getDetectRange();
+        }
 
         if (!isObeying)
         {

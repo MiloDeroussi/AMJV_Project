@@ -13,8 +13,7 @@ public class Leveinard : Pokemon
     public LayerMask targets;
     public bool isOnAttackCooldown; public bool isOnCapacityCooldown;
     private float damage;
-    [SerializeField] float attackRange;
-    [SerializeField] float detectRange;
+
     [SerializeField] float capacityCd;
     [SerializeField] float attackCd;
     [SerializeField] float capacityDuration;
@@ -57,7 +56,7 @@ public class Leveinard : Pokemon
             isOnAttackCooldown = true;
             egg = eggBag[i];
             i = (i + 1) % 3;
-            egg.transform.position = transform.position + transform.forward * 2;
+            egg.transform.position = transform.position + transform.forward * 3;
             egg.transform.LookAt(usm.attackTarget.transform.position + Vector3.up * (usm.attackTarget.transform.position - transform.forward).magnitude);
             egg.SetActive(true);
             StartCoroutine(AttackCooldown(attackCd));
@@ -68,6 +67,7 @@ public class Leveinard : Pokemon
     {
         if (!isOnCapacityCooldown)
         {
+            isOnCapacityCooldown = true;
             Collider[] hits = Physics.OverlapSphere(myAgent.nextPosition, capacityRange, targets);
             foreach (Collider c in hits)
             {
@@ -89,4 +89,6 @@ public class Leveinard : Pokemon
         yield return new WaitForSeconds(cd);
         isOnCapacityCooldown = false;
     }
+
+
 }

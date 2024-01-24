@@ -16,9 +16,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Momartik Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2008093951486520663, guid: acaa2408aba0dc44ca39ed876fa11651, type: 3}
+      propertyPath: ennemy.m_Bits
+      value: 4096
+      objectReference: {fileID: 0}
+    - target: {fileID: 5298097412009383277, guid: acaa2408aba0dc44ca39ed876fa11651, type: 3}
+      propertyPath: detectRange
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 5298097412009383277, guid: acaa2408aba0dc44ca39ed876fa11651, type: 3}
       propertyPath: capacityDamage
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5817303558504031789, guid: acaa2408aba0dc44ca39ed876fa11651, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8756766703893843010, guid: acaa2408aba0dc44ca39ed876fa11651, type: 3}
       propertyPath: m_LocalPosition.x

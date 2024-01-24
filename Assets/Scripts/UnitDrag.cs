@@ -51,6 +51,7 @@ public class UnitDrag : MonoBehaviour
         boxVisual.position = boxCenter;
         Vector2 boxSize = new Vector2(Mathf.Abs(boxStart.x - boxEnd.x), Mathf.Abs(boxEnd.y - boxStart.y));
         boxVisual.sizeDelta = boxSize;
+        
     }
 
     void DrawSelection()

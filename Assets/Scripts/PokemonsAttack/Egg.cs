@@ -35,6 +35,7 @@ public class Egg : MonoBehaviour
             {
                 c.GetComponent<Health>().damage(5);
             }
+            
         }
 
         active = false;

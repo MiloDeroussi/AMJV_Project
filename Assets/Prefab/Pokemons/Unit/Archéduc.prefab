@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5391827983850898736
+--- !u!1001 &4022053129053734831
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -8,17 +8,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 649859706373201599, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
+      propertyPath: ennemy.m_Bits
+      value: 4096
+      objectReference: {fileID: 0}
     - target: {fileID: 4475980923365223469, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -31.4
+      value: -114.96733
       objectReference: {fileID: 0}
     - target: {fileID: 4475980923365223469, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: -0.0000038146973
       objectReference: {fileID: 0}
     - target: {fileID: 4475980923365223469, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.6
+      value: -3.9996357
       objectReference: {fileID: 0}
     - target: {fileID: 4475980923365223469, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -50,19 +54,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6586842105871476193, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
       propertyPath: attackCd
-      value: 0.5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6586842105871476193, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
       propertyPath: capacityCd
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6586842105871476193, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
       propertyPath: attackRange
-      value: 50
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6586842105871476193, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
       propertyPath: detectRange
-      value: 100
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586842105871476193, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
+      propertyPath: ground.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586842105871476193, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
+      propertyPath: targets.m_Bits
+      value: 4096
       objectReference: {fileID: 0}
     - target: {fileID: 6586842105871476193, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
       propertyPath: capacityDuration
@@ -72,9 +84,13 @@ PrefabInstance:
       propertyPath: specialCarquois.Array.size
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6654837443205543925, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8916915625641725286, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
       propertyPath: m_Name
-      value: Archeduc Unit Variant
+      value: "Arch\xE9duc"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -82,56 +98,23 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8916915625641725286, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 951789412656939033}
+      addedObject: {fileID: 6379211474707638460}
     - targetCorrespondingSourceObject: {fileID: 8916915625641725286, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4341727790342387273}
-    - targetCorrespondingSourceObject: {fileID: 8916915625641725286, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6351448742653806127}
+      addedObject: {fileID: 2681741827814110252}
   m_SourcePrefab: {fileID: 100100000, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
---- !u!1 &3561398974154852438 stripped
+--- !u!1 &5507352066059553481 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8916915625641725286, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
-  m_PrefabInstance: {fileID: 5391827983850898736}
+  m_PrefabInstance: {fileID: 4022053129053734831}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &951789412656939033
+--- !u!114 &6379211474707638460
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3561398974154852438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2d8467de6db28b4aabe5cad9dbe2731, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ground:
-    serializedVersion: 2
-    m_Bits: 1024
-  targets:
-    serializedVersion: 2
-    m_Bits: 4096
-  isOnAttackCooldown: 0
-  isOnCapacityCooldown: 0
-  attackRange: 0
-  detectRange: 0
-  capacityCd: 0
-  attackCd: 1
-  capacityDuration: 0
-  capacityDamage: 0
-  attackDamage: 0
-  capacityRange: 0
-  carquois: []
-  specialCarquois: []
---- !u!114 &4341727790342387273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3561398974154852438}
+  m_GameObject: {fileID: 5507352066059553481}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058543f5c3b795647b14f81c03116f4a, type: 3}
@@ -146,13 +129,13 @@ MonoBehaviour:
   agent: {fileID: 0}
   isEnemy: 0
   isOnCooldown: 0
---- !u!114 &6351448742653806127
+--- !u!114 &2681741827814110252
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3561398974154852438}
+  m_GameObject: {fileID: 5507352066059553481}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7abefd6da4744c145a517601dc5d1b2e, type: 3}

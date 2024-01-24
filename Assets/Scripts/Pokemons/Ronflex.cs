@@ -13,8 +13,7 @@ public class Ronflex : Pokemon
     public LayerMask targets;
     public bool isOnAttackCooldown;
     public bool isOnCapacityCooldown;
-    [SerializeField] float attackRange;
-    [SerializeField] float detectRange;
+
     [SerializeField] float capacityCd;
     [SerializeField] float attackCd;
     [SerializeField] float capacityDuration;
@@ -93,4 +92,5 @@ public class Ronflex : Pokemon
             yield return new WaitForSeconds(1);
         }
     }
+
 }

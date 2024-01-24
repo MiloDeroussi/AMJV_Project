@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1896590707668794727, guid: 5df55c11a71c97842992cf503855025b, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3501131659911929446, guid: 5df55c11a71c97842992cf503855025b, type: 3}
+      propertyPath: isEnemy
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4538439966124305700, guid: 5df55c11a71c97842992cf503855025b, type: 3}
       propertyPath: m_Name
       value: Tauros Variant
@@ -52,6 +60,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7557401099685514428, guid: 5df55c11a71c97842992cf503855025b, type: 3}
+      propertyPath: ennemy.m_Bits
+      value: 4096
+      objectReference: {fileID: 0}
     - target: {fileID: 7809972810685784460, guid: 5df55c11a71c97842992cf503855025b, type: 3}
       propertyPath: capacityCd
       value: 5
@@ -62,7 +74,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7809972810685784460, guid: 5df55c11a71c97842992cf503855025b, type: 3}
       propertyPath: detectRange
-      value: 10
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 7809972810685784460, guid: 5df55c11a71c97842992cf503855025b, type: 3}
       propertyPath: attackDamage

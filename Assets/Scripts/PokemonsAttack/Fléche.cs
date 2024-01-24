@@ -23,10 +23,11 @@ public class Fléche : MonoBehaviour
         {
             spawn = transform.position;
             rb.velocity = transform.forward * speed;
+            Debug.Log(rb.velocity);
             active = true;
         }
 
-        if ((transform.position - spawn).sqrMagnitude > range)
+        if ((transform.position - spawn).magnitude > range)
         {
             active = false;
             this.gameObject.SetActive(false);
@@ -38,8 +39,14 @@ public class Fléche : MonoBehaviour
         if (other.gameObject.layer == 12)
         {
             other.GetComponent<Health>().damage(5);
+            active = false;
+            this.gameObject.SetActive(false);
         }
-        active = false;
-        this.gameObject.SetActive(false);
+        else if (other.gameObject.layer == 31)
+        {
+            active = false;
+            this.gameObject.SetActive(false);
+        }
+        
     }
 }

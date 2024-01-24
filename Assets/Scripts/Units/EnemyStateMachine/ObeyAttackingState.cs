@@ -10,6 +10,7 @@ public class ObeyAttackingState : UnitBaseState
     public override void Enter()
     {
         usm.agent.ResetPath();
+        Debug.Log("IReadOnlyCollection passe ici ?");
     }
 
     public override void Update()

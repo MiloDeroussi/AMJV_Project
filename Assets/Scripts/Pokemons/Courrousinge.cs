@@ -11,11 +11,10 @@ public class Courrousinge : Pokemon
     Camera myCam;
     [SerializeField] LayerMask ground;
     [SerializeField] LayerMask targets;
-    public bool isOnAttackCooldown;public bool isOnCapacityCooldown;
+    public bool isOnAttackCooldown; public bool isOnCapacityCooldown;
     private float damage;
     private float maxHealth;
-    [SerializeField] float attackRange;
-    [SerializeField] float detectRange;
+
     [SerializeField] float capacityCd;
     [SerializeField] float attackCd;
     [SerializeField] float capacityDuration;

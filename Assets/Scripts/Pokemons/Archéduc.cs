@@ -17,8 +17,7 @@ public class Archéduc : Pokemon
     private bool special;
     private GameObject specialFleche;
     private int j;
-    [SerializeField] float attackRange;
-    [SerializeField] float detectRange;
+
     [SerializeField] float capacityCd;
     [SerializeField] float attackCd;
     [SerializeField] float capacityDuration;
@@ -63,8 +62,10 @@ public class Archéduc : Pokemon
                 isOnAttackCooldown = true;
                 fleche = carquois[i];
                 i = (i + 1) % 6;
-                fleche.transform.position = transform.position + transform.forward * 2;
+                fleche.transform.position = transform.position + transform.forward * 3;
+                
                 fleche.transform.LookAt(usm.attackTarget.transform.position);
+
                 fleche.SetActive(true);
                 StartCoroutine(AttackCooldown(attackCd));
             }
@@ -74,7 +75,7 @@ public class Archéduc : Pokemon
                 isOnAttackCooldown = true;
                 specialFleche = specialCarquois[j];
                 j = (j + 1) % 6;
-                specialFleche.transform.position = transform.position + transform.forward * 2;
+                specialFleche.transform.position = transform.position + transform.forward * 3;
                 specialFleche.transform.LookAt(usm.attackTarget.transform.position);
                 specialFleche.SetActive(true);
                 StartCoroutine(AttackCooldown(attackCd));
@@ -110,5 +111,8 @@ public class Archéduc : Pokemon
         yield return new WaitForSeconds(capacityDuration);
         special = false;
     }
+
+
+
 }
 

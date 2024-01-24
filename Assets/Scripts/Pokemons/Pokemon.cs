@@ -4,7 +4,8 @@ using UnityEngine;
 
 public abstract class Pokemon : MonoBehaviour
 {
-
+    [SerializeField] private float attackRange;
+    [SerializeField] private float detectRange;
 
     // Start is called before the first frame update
     void Start()
@@ -25,4 +26,15 @@ public abstract class Pokemon : MonoBehaviour
     abstract public float getAttackCd();
 
     abstract public float getCooldown();
+
+    public float getAttackRange()
+    {
+        return attackRange;
+    }
+
+    public float getDetectRange()
+    {
+        return detectRange;
+    }
+
 }

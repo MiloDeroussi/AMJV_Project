@@ -13,8 +13,7 @@ public class Ectoplasma : Pokemon
     public LayerMask targets;
     public bool isOnAttackCooldown;
     public bool isOnCapacityCooldown;
-    [SerializeField] float attackRange;
-    [SerializeField] float detectRange;
+
     [SerializeField] float capacityCd;
     [SerializeField] private float attackCd;
     [SerializeField] float capacityDuration;
@@ -110,4 +109,5 @@ public class Ectoplasma : Pokemon
         yield return new WaitForSeconds(cd);
         isOnCapacityCooldown = false;
     }
+
 }
