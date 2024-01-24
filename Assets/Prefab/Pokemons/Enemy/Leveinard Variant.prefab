@@ -60,6 +60,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Leveinard Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5345553159811205894, guid: 8b5da0f9bf12fcd419ffe6d79410c0ee, type: 3}
+      propertyPath: attackRange
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5345553159811205894, guid: 8b5da0f9bf12fcd419ffe6d79410c0ee, type: 3}
+      propertyPath: detectRange
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 7178796336367180202, guid: 8b5da0f9bf12fcd419ffe6d79410c0ee, type: 3}
       propertyPath: ennemy.m_Bits
       value: 2048

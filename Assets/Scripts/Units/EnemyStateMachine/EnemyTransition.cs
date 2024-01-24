@@ -77,7 +77,13 @@ public class EnemyTransition : Transition
     {
 
         ToDeath();
-        
+
+        if (attackRange == 0 || detectRange == 0)
+        {
+            attackRange = stateMachine.getAttackRange();
+           
+            detectRange = stateMachine.getDetectRange();
+        }
 
         if (!isRegicing)
         {

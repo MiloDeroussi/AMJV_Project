@@ -64,6 +64,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 993676214891544059, guid: 7904293d30f01b447a3f0e5347bdfbe7, type: 3}
+      propertyPath: capacityCd
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 993676214891544059, guid: 7904293d30f01b447a3f0e5347bdfbe7, type: 3}
+      propertyPath: targets.m_Bits
+      value: 2048
+      objectReference: {fileID: 0}
     - target: {fileID: 1129820578442378747, guid: 7904293d30f01b447a3f0e5347bdfbe7, type: 3}
       propertyPath: m_Layer
       value: 12

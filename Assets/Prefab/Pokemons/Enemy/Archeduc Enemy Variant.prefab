@@ -92,6 +92,34 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 6586842105871476193, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
+      propertyPath: attackCd
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586842105871476193, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
+      propertyPath: capacityCd
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586842105871476193, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
+      propertyPath: attackRange
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586842105871476193, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
+      propertyPath: detectRange
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586842105871476193, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
+      propertyPath: ground.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586842105871476193, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
+      propertyPath: targets.m_Bits
+      value: 4096
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586842105871476193, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
+      propertyPath: capacityDuration
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6644428635569603998, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
       propertyPath: m_Layer
       value: 12
@@ -198,6 +226,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2d8467de6db28b4aabe5cad9dbe2731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackRange: 0
+  detectRange: 0
   ground:
     serializedVersion: 2
     m_Bits: 0
@@ -206,8 +236,6 @@ MonoBehaviour:
     m_Bits: 0
   isOnAttackCooldown: 0
   isOnCapacityCooldown: 0
-  attackRange: 0
-  detectRange: 0
   capacityCd: 0
   attackCd: 0
   capacityDuration: 0

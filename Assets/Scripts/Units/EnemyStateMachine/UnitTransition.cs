@@ -64,7 +64,6 @@ public class UnitTransition : Transition
 
         //Les variables suivantes seront à récupérer sur notre unité
         attackRange = stateMachine.getAttackRange();
-        Debug.Log(stateMachine.pokemon.name + ": " + attackRange);
         detectRange = stateMachine.getDetectRange();
 
 

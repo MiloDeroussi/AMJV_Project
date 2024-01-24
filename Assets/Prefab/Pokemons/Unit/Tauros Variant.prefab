@@ -70,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7809972810685784460, guid: 5df55c11a71c97842992cf503855025b, type: 3}
       propertyPath: attackRange
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7809972810685784460, guid: 5df55c11a71c97842992cf503855025b, type: 3}
       propertyPath: detectRange
