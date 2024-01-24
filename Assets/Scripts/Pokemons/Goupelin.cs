@@ -24,7 +24,9 @@ public class Goupelin : Pokemon
     [SerializeField] float capacityRadius;
     [SerializeField] float capacityDamage;
     [SerializeField] float attackDamage;
-    [SerializeField] GameObject blizzard;
+    [SerializeField] GameObject[] fireballs;
+    [SerializeField] GameObject fireball;
+    private int i;
     public override float getAttackCd()
     {
         return attackCd;
@@ -56,8 +58,11 @@ public class Goupelin : Pokemon
         if (!isOnAttackCooldown)
         {
             isOnAttackCooldown = true;
-            usm.attackTarget.GetComponent<Health>().damage(attackDamage);
-            StartCoroutine(Slow(2f, usm.attackTarget.GetComponent<NavMeshAgent>()));
+            fireball = fireballs[i];
+            i = (i + 1) % 3;
+            fireball.transform.position = transform.position + transform.forward * 2;
+            fireball.transform.LookAt(usm.attackTarget.transform.position + Vector3.up * (usm.attackTarget.transform.position - transform.forward).magnitude);
+            fireball.SetActive(true);
             StartCoroutine(AttackCooldown(attackCd));
         }
     }
@@ -66,7 +71,7 @@ public class Goupelin : Pokemon
     {
         if (!isOnCapacityCooldown)
         {
-            StartCoroutine(Blizzard());
+
         }
     }
 
@@ -80,38 +85,5 @@ public class Goupelin : Pokemon
     {
         yield return new WaitForSeconds(cd);
         isOnCapacityCooldown = false;
-    }
-
-    private IEnumerator Slow(float slowTime, NavMeshAgent target)
-    {
-        float originalSpeed = target.speed;
-        target.speed = originalSpeed / 2;
-        yield return new WaitForSeconds(slowTime);
-        target.speed = originalSpeed;
-        isOnCapacityCooldown = false;
-    }
-
-    private IEnumerator Blizzard()
-    {
-        isOnCapacityCooldown = true;
-        float i = 10;
-        GameObject at = usm.attackTarget;
-        blizzard.transform.position = at.transform.position;
-        Vector3 dir = at.transform.position - transform.position;
-        blizzard.SetActive(true);
-        while (i > 0)
-        {
-            Collider[] hits = Physics.OverlapSphere(at.transform.position, capacityRadius, targets);
-            foreach (Collider c in hits)
-            {
-                blizzard.transform.position = at.transform.position;
-                c.GetComponent<Health>().damage(capacityDamage);
-                c.GetComponent<Rigidbody>().AddForce(dir * 3);
-                StartCoroutine(Slow(2f, c.GetComponent<NavMeshAgent>()));
-            }
-            i--;
-            yield return new WaitForSeconds(capacityDuration / 10);
-        }
-        blizzard.SetActive(false);
     }
 }

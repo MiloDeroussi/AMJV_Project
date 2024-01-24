@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1166556659211798266, guid: 67464532f3b8f0242bc3d92bd48fc93b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -20.194458
+      value: -11.18
       objectReference: {fileID: 0}
     - target: {fileID: 1166556659211798266, guid: 67464532f3b8f0242bc3d92bd48fc93b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0000038146973
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1166556659211798266, guid: 67464532f3b8f0242bc3d92bd48fc93b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -21.76778
+      value: -12.63
       objectReference: {fileID: 0}
     - target: {fileID: 1166556659211798266, guid: 67464532f3b8f0242bc3d92bd48fc93b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -51,6 +51,46 @@ PrefabInstance:
     - target: {fileID: 3591250685097674649, guid: 67464532f3b8f0242bc3d92bd48fc93b, type: 3}
       propertyPath: m_Name
       value: Goupelin Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462648020521479638, guid: 67464532f3b8f0242bc3d92bd48fc93b, type: 3}
+      propertyPath: attackCd
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462648020521479638, guid: 67464532f3b8f0242bc3d92bd48fc93b, type: 3}
+      propertyPath: capacityCd
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462648020521479638, guid: 67464532f3b8f0242bc3d92bd48fc93b, type: 3}
+      propertyPath: attackRange
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462648020521479638, guid: 67464532f3b8f0242bc3d92bd48fc93b, type: 3}
+      propertyPath: detectRange
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462648020521479638, guid: 67464532f3b8f0242bc3d92bd48fc93b, type: 3}
+      propertyPath: attackDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462648020521479638, guid: 67464532f3b8f0242bc3d92bd48fc93b, type: 3}
+      propertyPath: capacityRange
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462648020521479638, guid: 67464532f3b8f0242bc3d92bd48fc93b, type: 3}
+      propertyPath: capacityDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462648020521479638, guid: 67464532f3b8f0242bc3d92bd48fc93b, type: 3}
+      propertyPath: capacityRadius
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462648020521479638, guid: 67464532f3b8f0242bc3d92bd48fc93b, type: 3}
+      propertyPath: capacityDuration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462648020521479638, guid: 67464532f3b8f0242bc3d92bd48fc93b, type: 3}
+      propertyPath: fireballs.Array.size
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
