@@ -8,21 +8,69 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2028318849964800835, guid: 855d8c73816fc4341885f9f50e15f79c, type: 3}
+      propertyPath: attackCd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2028318849964800835, guid: 855d8c73816fc4341885f9f50e15f79c, type: 3}
+      propertyPath: capacityCd
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -2028318849964800835, guid: 855d8c73816fc4341885f9f50e15f79c, type: 3}
+      propertyPath: attackRange
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2028318849964800835, guid: 855d8c73816fc4341885f9f50e15f79c, type: 3}
+      propertyPath: detectRange
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -2028318849964800835, guid: 855d8c73816fc4341885f9f50e15f79c, type: 3}
+      propertyPath: attackDamage
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -2028318849964800835, guid: 855d8c73816fc4341885f9f50e15f79c, type: 3}
+      propertyPath: capacityRange
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -2028318849964800835, guid: 855d8c73816fc4341885f9f50e15f79c, type: 3}
+      propertyPath: ground.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: -2028318849964800835, guid: 855d8c73816fc4341885f9f50e15f79c, type: 3}
+      propertyPath: capacityDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -2028318849964800835, guid: 855d8c73816fc4341885f9f50e15f79c, type: 3}
+      propertyPath: capacityRadius
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -2028318849964800835, guid: 855d8c73816fc4341885f9f50e15f79c, type: 3}
+      propertyPath: targets.m_Bits
+      value: 4096
+      objectReference: {fileID: 0}
+    - target: {fileID: -2028318849964800835, guid: 855d8c73816fc4341885f9f50e15f79c, type: 3}
+      propertyPath: capacityDuration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2028318849964800835, guid: 855d8c73816fc4341885f9f50e15f79c, type: 3}
+      propertyPath: pieges.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1362229311664160306, guid: 855d8c73816fc4341885f9f50e15f79c, type: 3}
       propertyPath: m_Name
       value: Minotaupe Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6662191143047697328, guid: 855d8c73816fc4341885f9f50e15f79c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -23.407177
+      value: -6.684993
       objectReference: {fileID: 0}
     - target: {fileID: 6662191143047697328, guid: 855d8c73816fc4341885f9f50e15f79c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0000038146973
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6662191143047697328, guid: 855d8c73816fc4341885f9f50e15f79c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.115518
+      value: -5.9885406
       objectReference: {fileID: 0}
     - target: {fileID: 6662191143047697328, guid: 855d8c73816fc4341885f9f50e15f79c, type: 3}
       propertyPath: m_LocalRotation.w

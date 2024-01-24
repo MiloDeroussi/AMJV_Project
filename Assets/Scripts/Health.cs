@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
     [SerializeField] float maxHealth;
     [SerializeField] float currentHealth;
     [SerializeField] float defense;
+    [SerializeField] bool insensible;
     [SerializeField] GameObject healthBar;
     private float mitigatedDamage;
     private float poisonTurn;
@@ -19,6 +20,7 @@ public class Health : MonoBehaviour
         currentHealth = maxHealth;
         healthFill = GetComponentsInChildren<SpriteRenderer>()[0];
         healthVoid = GetComponentsInChildren<SpriteRenderer>()[1];
+        insensible = false;
 
         poisonDamage = 0;
         poisonTurn = 0;
@@ -37,8 +39,11 @@ public class Health : MonoBehaviour
 
     public void damage(float damage)
     {
-        mitigatedDamage = Mathf.Max(damage - defense, 0);
-        currentHealth = Mathf.Max(currentHealth - mitigatedDamage, 0);
+        if (!insensible)
+        {
+            mitigatedDamage = Mathf.Max(damage - defense, 0);
+            currentHealth = Mathf.Max(currentHealth - mitigatedDamage, 0);
+        }
     }
 
     public void heal(float heal)

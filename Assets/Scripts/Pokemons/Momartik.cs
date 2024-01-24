@@ -95,14 +95,18 @@ public class Momartik : Pokemon
     {
         isOnCapacityCooldown = true;
         float i = 10;
-        blizzard.transform.position = usm.attackTarget.transform.position;
+        GameObject at = usm.attackTarget;
+        blizzard.transform.position = at.transform.position;
+        Vector3 dir = at.transform.position - transform.position;
         blizzard.SetActive(true);
         while (i > 0)
         {
-            Collider[] hits = Physics.OverlapSphere(usm.attackTarget.transform.position, capacityRadius, targets);
+            Collider[] hits = Physics.OverlapSphere(at.transform.position, capacityRadius, targets);
             foreach (Collider c in hits)
             {
-                blizzard.transform.position = usm.attackTarget.transform.position;
+                blizzard.transform.position = at.transform.position;
+                c.GetComponent<Health>().damage(capacityDamage);
+                c.GetComponent<Rigidbody>().AddForce(dir * 3);
                 StartCoroutine(Slow(2f, c.GetComponent<NavMeshAgent>()));   
             }
             i--;
