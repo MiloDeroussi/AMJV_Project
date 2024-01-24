@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 649859706373201599, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
+      propertyPath: ennemy.m_Bits
+      value: 2048
+      objectReference: {fileID: 0}
     - target: {fileID: 651842809855578470, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
       propertyPath: m_Layer
       value: 12
@@ -92,6 +96,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 6654837443205543925, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7003206002488961757, guid: e0f72fbad99bbc346aa5cd47a4f38c7a, type: 3}
       propertyPath: m_Layer
       value: 12
@@ -154,7 +162,7 @@ MonoBehaviour:
   obeyActionIsGiven: 0
   pokemon: {fileID: 0}
   agent: {fileID: 0}
-  isEnemy: 0
+  isEnemy: 1
   isOnCooldown: 0
 --- !u!114 &8326964000000302070
 MonoBehaviour:
@@ -207,3 +215,4 @@ MonoBehaviour:
   attackDamage: 0
   capacityRange: 0
   carquois: []
+  specialCarquois: []

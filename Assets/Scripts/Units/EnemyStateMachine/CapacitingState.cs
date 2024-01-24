@@ -9,7 +9,6 @@ public class CapacitingState : UnitBaseState
     }
     public override void Enter()
     {
-        usm.agent.isStopped = true;
         
     }
 
@@ -21,6 +20,5 @@ public class CapacitingState : UnitBaseState
 
     public override void Exit()
     {
-        usm.agent.isStopped = false;
     }
 }

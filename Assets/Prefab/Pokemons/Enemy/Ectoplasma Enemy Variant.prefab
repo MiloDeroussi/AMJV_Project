@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 1283343012413217225, guid: 1f1dbc55694250f479a0bb8262e78314, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1494990693705531328, guid: 1f1dbc55694250f479a0bb8262e78314, type: 3}
       propertyPath: m_Layer
       value: 12
@@ -39,6 +43,10 @@ PrefabInstance:
     - target: {fileID: 3166408750940842262, guid: 1f1dbc55694250f479a0bb8262e78314, type: 3}
       propertyPath: m_Layer
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662507455471117529, guid: 1f1dbc55694250f479a0bb8262e78314, type: 3}
+      propertyPath: isEnemy
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4072240609325330999, guid: 1f1dbc55694250f479a0bb8262e78314, type: 3}
       propertyPath: m_Layer
@@ -103,6 +111,10 @@ PrefabInstance:
     - target: {fileID: 7476623750600022530, guid: 1f1dbc55694250f479a0bb8262e78314, type: 3}
       propertyPath: m_Layer
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7580726745664325610, guid: 1f1dbc55694250f479a0bb8262e78314, type: 3}
+      propertyPath: ennemy.m_Bits
+      value: 2048
       objectReference: {fileID: 0}
     - target: {fileID: 7917753625502005986, guid: 1f1dbc55694250f479a0bb8262e78314, type: 3}
       propertyPath: m_Layer

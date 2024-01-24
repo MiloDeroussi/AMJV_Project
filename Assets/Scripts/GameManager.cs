@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     private GameObject king;
     private RulesManager ruleManager;
     [SerializeField] private AudioSource music;
+    [SerializeField] private AudioClip[] musics;
+    private int currentTrack;
     
     private string levelName;
     private float difficultyModifier;
@@ -52,6 +54,13 @@ public class GameManager : MonoBehaviour
     {
         return difficultyModifier;
     }
-    
+
+    public void SetTrack()
+    {
+        currentTrack = Mathf.Abs(currentTrack - 1) ;
+        music.clip = musics[currentTrack];
+        music.Play();
+    }
+
 
 }

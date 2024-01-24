@@ -9,16 +9,17 @@ public class RegicingAttackingState : UnitBaseState
     }
     public override void Enter()
     {
-        usm.agent.isStopped = true;
+        usm.agent.ResetPath();
+
     }
 
     public override void Update()
     {
-
+        usm.pokemon.Attack();
     }
 
     public override void Exit()
     {
-        usm.agent.isStopped = false;
+        
     }
 }

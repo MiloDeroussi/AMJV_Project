@@ -75,6 +75,10 @@ public class EnemyTransition : Transition
 
     private void Update()
     {
+
+        ToDeath();
+        
+
         if (!isRegicing)
         {
 
@@ -92,7 +96,7 @@ public class EnemyTransition : Transition
 
             if (stateMachine.CurrentState == EUnitStateMachine.UnitState.ATTACKING)
             {
-                AttackToCapaciting();
+                ToCapaciting();
                 AttackingToMoving();
                 AttackingToIdle();
             }
@@ -103,7 +107,6 @@ public class EnemyTransition : Transition
             }
 
             ToRegicing();
-            ToDeath();
         }
         else
         {
@@ -114,6 +117,7 @@ public class EnemyTransition : Transition
             if (stateMachine.CurrentState == EUnitStateMachine.UnitState.REGICINGATTACKING)
             {
                 RegicingAttackingToRegicingMoving();
+                ToCapaciting();
             }
         }
     }
@@ -265,7 +269,7 @@ public class EnemyTransition : Transition
 
     }
 
-    void AttackToCapaciting()
+    void ToCapaciting()
     {
         if (canCapaciting == false)
         {

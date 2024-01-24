@@ -9,7 +9,6 @@ public class MovingState : UnitBaseState
     }
     public override void Enter()
     {
-        usm.agent.isStopped = false;
         
     }
 
@@ -22,8 +21,7 @@ public class MovingState : UnitBaseState
 
     public override void Exit()
     {
-        //Play Anim
-        usm.agent.isStopped = true;
+
     }
 
 }

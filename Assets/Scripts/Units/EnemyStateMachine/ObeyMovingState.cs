@@ -9,13 +9,16 @@ public class ObeyMovingState : UnitBaseState
     }
     public override void Enter()
     {
-        usm.agent.isStopped = false;
         usm.attackTarget = null;
         
     }
 
     public override void Update()
     {
+        if (usm.focusTarget != null)
+        {
+            usm.agent.SetDestination(usm.focusTarget.transform.position);
+        }
         if (usm.agent.remainingDistance < usm.agent.stoppingDistance )
         {
             usm.obeyActionIsGiven = false;
@@ -28,7 +31,6 @@ public class ObeyMovingState : UnitBaseState
     public override void Exit()
     {
         //Play Anim
-        usm.agent.isStopped = true;
     }
 
 }

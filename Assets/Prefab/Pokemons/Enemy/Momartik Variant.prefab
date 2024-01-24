@@ -76,6 +76,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 3547316506556181689, guid: fb5f1a6954df31b4ba919ca9646d6949, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5065439018223858363, guid: fb5f1a6954df31b4ba919ca9646d6949, type: 3}
       propertyPath: m_Layer
       value: 12
@@ -103,6 +107,10 @@ PrefabInstance:
     - target: {fileID: 5754702591206135308, guid: fb5f1a6954df31b4ba919ca9646d6949, type: 3}
       propertyPath: m_Layer
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6300209350746611495, guid: fb5f1a6954df31b4ba919ca9646d6949, type: 3}
+      propertyPath: isEnemy
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7035863681513975656, guid: fb5f1a6954df31b4ba919ca9646d6949, type: 3}
       propertyPath: m_Name

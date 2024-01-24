@@ -9,7 +9,7 @@ public class ObeyAttackingState : UnitBaseState
     }
     public override void Enter()
     {
-        usm.agent.isStopped = true;
+        usm.agent.ResetPath();
     }
 
     public override void Update()
@@ -25,8 +25,6 @@ public class ObeyAttackingState : UnitBaseState
 
     public override void Exit()
     {
-        //Play Anim
-        usm.agent.isStopped = false;
     }
 
 }

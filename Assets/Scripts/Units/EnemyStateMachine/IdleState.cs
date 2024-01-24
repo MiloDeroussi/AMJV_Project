@@ -12,7 +12,6 @@ public class IdleState : UnitBaseState
     }
     public override void Enter()
     {
-        //Debug.Log("Hello I'm idle");
     }
 
     public override void Update()
@@ -22,7 +21,6 @@ public class IdleState : UnitBaseState
 
     public override void Exit()
     {
-        //Debug.Log("shit i have something to do !");
     }
 }
 

@@ -10,7 +10,7 @@ public class Buttons : MonoBehaviour
 
     private string LevelScene;
 
-    
+    private GameManager gameManager;
     private string AudioSettingsScene;
     private string GraphicsSettingsScene;
     private string RuleScene;
@@ -18,6 +18,7 @@ public class Buttons : MonoBehaviour
 
     void Start()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         AudioSettingsScene = "Audio Settings";
         GraphicsSettingsScene = "Graphic Settings";
         RuleScene = "Rule Screen";
@@ -51,7 +52,7 @@ public class Buttons : MonoBehaviour
     }
     public void LaunchLevel()
     {
-        
+        gameManager.SetTrack();
         SceneManager.LoadScene(LevelScene);
     }
 

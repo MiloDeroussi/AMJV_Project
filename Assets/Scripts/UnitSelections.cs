@@ -80,4 +80,9 @@ public class UnitSelections : MonoBehaviour
     {
         return EnemyList;
     }
+
+    public List<GameObject> GetUnitList()
+    {
+        return unitList;
+    }
 }

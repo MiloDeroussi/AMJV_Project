@@ -5,7 +5,8 @@ using UnityEngine;
 public class HomeManager : MonoBehaviour
 {
     private bool brought;
-    [SerializeField] GameObject kingManager;
+    [SerializeField] private GameObject kingManager;
+    [SerializeField] private GameObject inGameUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,7 @@ public class HomeManager : MonoBehaviour
     {
         if (!(brought) & (other.gameObject == kingManager.GetComponent<KingManager>().getKing()))
         {
+            inGameUI.GetComponent<InGameUI>().Victory();
             Debug.Log("Victory !");
             brought = true;
         }

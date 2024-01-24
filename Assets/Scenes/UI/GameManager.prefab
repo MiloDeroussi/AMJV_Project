@@ -44,5 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b220ce1de932d914f967ccf680f5bfbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Flag: {fileID: 0}
-  UIManager: {fileID: 0}
+  music: {fileID: 0}
+  musics:
+  - {fileID: 8300000, guid: 4602b302153b8024db61dd8a263fec3b, type: 3}
+  - {fileID: 8300000, guid: f8aa7813a9ab028409511f23738c8905, type: 3}

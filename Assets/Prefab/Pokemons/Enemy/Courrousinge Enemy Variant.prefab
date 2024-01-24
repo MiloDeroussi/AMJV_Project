@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 791701742083650606, guid: 7904293d30f01b447a3f0e5347bdfbe7, type: 3}
+      propertyPath: isEnemy
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 833865433763335371, guid: 7904293d30f01b447a3f0e5347bdfbe7, type: 3}
       propertyPath: m_Name
       value: Courrousinge Enemy Variant
@@ -104,6 +108,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 5045680757605269628, guid: 7904293d30f01b447a3f0e5347bdfbe7, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6426240249069046113, guid: 7904293d30f01b447a3f0e5347bdfbe7, type: 3}
       propertyPath: m_Layer
       value: 12
@@ -111,6 +119,10 @@ PrefabInstance:
     - target: {fileID: 7158039110482031416, guid: 7904293d30f01b447a3f0e5347bdfbe7, type: 3}
       propertyPath: m_Layer
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8305850610196702690, guid: 7904293d30f01b447a3f0e5347bdfbe7, type: 3}
+      propertyPath: ennemy.m_Bits
+      value: 2048
       objectReference: {fileID: 0}
     - target: {fileID: 8645849783200459238, guid: 7904293d30f01b447a3f0e5347bdfbe7, type: 3}
       propertyPath: m_Layer

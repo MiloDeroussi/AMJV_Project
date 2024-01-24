@@ -5,6 +5,7 @@ using UnityEngine;
 public class KingManager : MonoBehaviour
 {
     private GameObject king;
+    [SerializeField] private GameObject inGameUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,9 +15,10 @@ public class KingManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (king?.GetComponent<Health>().getHealth() == 0)
+        if (king?.GetComponent<Health>().getHealth() <= 0)
         {
             Debug.Log("C'est perdu");
+            inGameUI.GetComponent<InGameUI>().Defeat();
         }
     }
 

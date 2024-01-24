@@ -19,11 +19,11 @@ public class GraphicsManager : MonoBehaviour
     {
         Debug.Log(Mathf.FloorToInt(QualityScrollBar.value * (QualityScrollBar.numberOfSteps-1)) );
         QualitySettings.SetQualityLevel(Mathf.FloorToInt(QualityScrollBar.value * (QualityScrollBar.numberOfSteps-1)));
-        if (windowOption.value == 0)
+        if (windowOption.value == 1)
         {
             Screen.fullScreen = false;
         }
-        else if (windowOption.value == 1)
+        else if (windowOption.value == 0)
         {
             Screen.fullScreen = true;
         }
