@@ -329,13 +329,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2171849835235898345, guid: c1d61cd6c2d94d4468d55ce3d72542a7, type: 3}
+      propertyPath: kingManager
+      value: 
+      objectReference: {fileID: 1682396362}
+    - target: {fileID: 2171849835235898345, guid: c1d61cd6c2d94d4468d55ce3d72542a7, type: 3}
+      propertyPath: UnitSelector
+      value: 
+      objectReference: {fileID: 1992496920}
     - target: {fileID: 3045970342720257453, guid: c1d61cd6c2d94d4468d55ce3d72542a7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3045970342720257453, guid: c1d61cd6c2d94d4468d55ce3d72542a7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -71.3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4388403639183067823, guid: c1d61cd6c2d94d4468d55ce3d72542a7, type: 3}
       propertyPath: m_Name
@@ -381,6 +389,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6844966728533801464, guid: c1d61cd6c2d94d4468d55ce3d72542a7, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -413,6 +425,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Archeduc Unit Variant (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4888478236507855759, guid: 8587e5b0418344d41beb6874f03d1ca5, type: 3}
+      propertyPath: ennemy.m_Bits
+      value: 4096
+      objectReference: {fileID: 0}
+    - target: {fileID: 6351448742653806127, guid: 8587e5b0418344d41beb6874f03d1ca5, type: 3}
+      propertyPath: unitSelectionSystem
+      value: 
+      objectReference: {fileID: 1992496920}
     - target: {fileID: 8416803380884302109, guid: 8587e5b0418344d41beb6874f03d1ca5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -112.544395
@@ -96990,12 +97010,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2935912371361911614, guid: 9231bf1cdec12db43a841d5aba9ebb4d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2935912371361911614, guid: 9231bf1cdec12db43a841d5aba9ebb4d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.4
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3366572382256304649, guid: 9231bf1cdec12db43a841d5aba9ebb4d, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 5710024997331129165, guid: 9231bf1cdec12db43a841d5aba9ebb4d, type: 3}
+      propertyPath: kingManager
+      value: 
+      objectReference: {fileID: 1682396362}
+    - target: {fileID: 5710024997331129165, guid: 9231bf1cdec12db43a841d5aba9ebb4d, type: 3}
+      propertyPath: UnitSelector
+      value: 
+      objectReference: {fileID: 1992496920}
     - target: {fileID: 7792967752862530299, guid: 9231bf1cdec12db43a841d5aba9ebb4d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -22.006922
@@ -97567,10 +97599,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1215055084688411352, guid: b5f4de48225bd3b478a8b7cce9e7c83e, type: 3}
+      propertyPath: ennemy.m_Bits
+      value: 4096
+      objectReference: {fileID: 0}
     - target: {fileID: 4201474370652202731, guid: b5f4de48225bd3b478a8b7cce9e7c83e, type: 3}
       propertyPath: m_Name
       value: Ronflex Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 6572711195017440135, guid: b5f4de48225bd3b478a8b7cce9e7c83e, type: 3}
+      propertyPath: unitSelectionSystem
+      value: 
+      objectReference: {fileID: 1992496920}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -98973,6 +99013,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2171849835235898345, guid: c1d61cd6c2d94d4468d55ce3d72542a7, type: 3}
+      propertyPath: kingManager
+      value: 
+      objectReference: {fileID: 1682396362}
+    - target: {fileID: 2171849835235898345, guid: c1d61cd6c2d94d4468d55ce3d72542a7, type: 3}
+      propertyPath: UnitSelector
+      value: 
+      objectReference: {fileID: 1992496920}
     - target: {fileID: 4388403639183067823, guid: c1d61cd6c2d94d4468d55ce3d72542a7, type: 3}
       propertyPath: m_Name
       value: Ectoplasma Enemy Variant
@@ -99016,6 +99064,10 @@ PrefabInstance:
     - target: {fileID: 6107381988464860205, guid: c1d61cd6c2d94d4468d55ce3d72542a7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844966728533801464, guid: c1d61cd6c2d94d4468d55ce3d72542a7, type: 3}
+      propertyPath: m_Constraints
+      value: 112
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -99745,6 +99797,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Archeduc Unit Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4888478236507855759, guid: 8587e5b0418344d41beb6874f03d1ca5, type: 3}
+      propertyPath: ennemy.m_Bits
+      value: 4096
+      objectReference: {fileID: 0}
+    - target: {fileID: 6351448742653806127, guid: 8587e5b0418344d41beb6874f03d1ca5, type: 3}
+      propertyPath: unitSelectionSystem
+      value: 
+      objectReference: {fileID: 1992496920}
     - target: {fileID: 8416803380884302109, guid: 8587e5b0418344d41beb6874f03d1ca5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -114.96733
@@ -99919,6 +99979,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3482659165031797665, guid: dea1782264c421645b9028c0b6896343, type: 3}
+      propertyPath: unitSelectionSystem
+      value: 
+      objectReference: {fileID: 1992496920}
+    - target: {fileID: 4368503531494803720, guid: dea1782264c421645b9028c0b6896343, type: 3}
+      propertyPath: ennemy.m_Bits
+      value: 4096
+      objectReference: {fileID: 0}
     - target: {fileID: 7583401830704039269, guid: dea1782264c421645b9028c0b6896343, type: 3}
       propertyPath: m_Name
       value: Minotaupe Variant (1)
@@ -100049,6 +100117,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1945668956843534042, guid: 7cd20809701a3dd4e945f429809470da, type: 3}
+      propertyPath: ennemy.m_Bits
+      value: 4096
+      objectReference: {fileID: 0}
+    - target: {fileID: 3484592146166197247, guid: 7cd20809701a3dd4e945f429809470da, type: 3}
+      propertyPath: isEnemy
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5491663238299275062, guid: 7cd20809701a3dd4e945f429809470da, type: 3}
       propertyPath: m_Name
       value: Leveinard Variant
@@ -100093,6 +100169,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9216736218776398998, guid: 7cd20809701a3dd4e945f429809470da, type: 3}
+      propertyPath: unitSelectionSystem
+      value: 
+      objectReference: {fileID: 1992496920}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -111436,6 +111516,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2171849835235898345, guid: c1d61cd6c2d94d4468d55ce3d72542a7, type: 3}
+      propertyPath: kingManager
+      value: 
+      objectReference: {fileID: 1682396362}
+    - target: {fileID: 2171849835235898345, guid: c1d61cd6c2d94d4468d55ce3d72542a7, type: 3}
+      propertyPath: UnitSelector
+      value: 
+      objectReference: {fileID: 1992496920}
     - target: {fileID: 4388403639183067823, guid: c1d61cd6c2d94d4468d55ce3d72542a7, type: 3}
       propertyPath: m_Name
       value: Ectoplasma Enemy Variant (3)
@@ -111479,6 +111567,10 @@ PrefabInstance:
     - target: {fileID: 6107381988464860205, guid: c1d61cd6c2d94d4468d55ce3d72542a7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844966728533801464, guid: c1d61cd6c2d94d4468d55ce3d72542a7, type: 3}
+      propertyPath: m_Constraints
+      value: 112
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -111560,12 +111652,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2935912371361911614, guid: 9231bf1cdec12db43a841d5aba9ebb4d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2935912371361911614, guid: 9231bf1cdec12db43a841d5aba9ebb4d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.7
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3366572382256304649, guid: 9231bf1cdec12db43a841d5aba9ebb4d, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 5710024997331129165, guid: 9231bf1cdec12db43a841d5aba9ebb4d, type: 3}
+      propertyPath: kingManager
+      value: 
+      objectReference: {fileID: 1682396362}
+    - target: {fileID: 5710024997331129165, guid: 9231bf1cdec12db43a841d5aba9ebb4d, type: 3}
+      propertyPath: UnitSelector
+      value: 
+      objectReference: {fileID: 1992496920}
     - target: {fileID: 7792967752862530299, guid: 9231bf1cdec12db43a841d5aba9ebb4d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.5
@@ -111970,6 +112074,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3482659165031797665, guid: dea1782264c421645b9028c0b6896343, type: 3}
+      propertyPath: unitSelectionSystem
+      value: 
+      objectReference: {fileID: 1992496920}
+    - target: {fileID: 4368503531494803720, guid: dea1782264c421645b9028c0b6896343, type: 3}
+      propertyPath: ennemy.m_Bits
+      value: 4096
+      objectReference: {fileID: 0}
     - target: {fileID: 7583401830704039269, guid: dea1782264c421645b9028c0b6896343, type: 3}
       propertyPath: m_Name
       value: Minotaupe Variant
@@ -112100,16 +112212,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2769772758483273064, guid: 01150a1ce98bee446843ea32cfff78c8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2769772758483273064, guid: 01150a1ce98bee446843ea32cfff78c8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3240591441945342929, guid: 01150a1ce98bee446843ea32cfff78c8, type: 3}
       propertyPath: m_Name
       value: Courrousinge Enemy Variant (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3656795580738383431, guid: 01150a1ce98bee446843ea32cfff78c8, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 8417979490389678013, guid: 01150a1ce98bee446843ea32cfff78c8, type: 3}
+      propertyPath: kingManager
+      value: 
+      objectReference: {fileID: 1682396362}
+    - target: {fileID: 8417979490389678013, guid: 01150a1ce98bee446843ea32cfff78c8, type: 3}
+      propertyPath: UnitSelector
+      value: 
+      objectReference: {fileID: 1992496920}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -112372,6 +112496,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Courrousinge Enemy Variant (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3656795580738383431, guid: 01150a1ce98bee446843ea32cfff78c8, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 8417979490389678013, guid: 01150a1ce98bee446843ea32cfff78c8, type: 3}
+      propertyPath: kingManager
+      value: 
+      objectReference: {fileID: 1682396362}
+    - target: {fileID: 8417979490389678013, guid: 01150a1ce98bee446843ea32cfff78c8, type: 3}
+      propertyPath: UnitSelector
+      value: 
+      objectReference: {fileID: 1992496920}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -113183,6 +113319,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5b2c93e462837249aa7b6ff074af1f7, type: 3}
+--- !u!114 &1682396362 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1272919429386607984, guid: c62fa314ca9273a47a2721cf958b8f88, type: 3}
+  m_PrefabInstance: {fileID: 124701595}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba015d3c9d55a6648b4b522c4a173d06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1683326396
 GameObject:
   m_ObjectHideFlags: 0
@@ -113461,6 +113608,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 159679984921551525, guid: bdaf91a4863acc14c8afc40792270c9f, type: 3}
+      propertyPath: ennemy.m_Bits
+      value: 4096
+      objectReference: {fileID: 0}
+    - target: {fileID: 924071696329102768, guid: bdaf91a4863acc14c8afc40792270c9f, type: 3}
+      propertyPath: unitSelectionSystem
+      value: 
+      objectReference: {fileID: 1992496920}
     - target: {fileID: 3906585370894803582, guid: bdaf91a4863acc14c8afc40792270c9f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -113.54776
@@ -113726,6 +113881,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 159679984921551525, guid: bdaf91a4863acc14c8afc40792270c9f, type: 3}
+      propertyPath: ennemy.m_Bits
+      value: 4096
+      objectReference: {fileID: 0}
+    - target: {fileID: 924071696329102768, guid: bdaf91a4863acc14c8afc40792270c9f, type: 3}
+      propertyPath: unitSelectionSystem
+      value: 
+      objectReference: {fileID: 1992496920}
     - target: {fileID: 3906585370894803582, guid: bdaf91a4863acc14c8afc40792270c9f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -108.3552
@@ -113854,13 +114017,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2171849835235898345, guid: c1d61cd6c2d94d4468d55ce3d72542a7, type: 3}
+      propertyPath: kingManager
+      value: 
+      objectReference: {fileID: 1682396362}
+    - target: {fileID: 2171849835235898345, guid: c1d61cd6c2d94d4468d55ce3d72542a7, type: 3}
+      propertyPath: UnitSelector
+      value: 
+      objectReference: {fileID: 1992496920}
     - target: {fileID: 3045970342720257453, guid: c1d61cd6c2d94d4468d55ce3d72542a7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3045970342720257453, guid: c1d61cd6c2d94d4468d55ce3d72542a7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4388403639183067823, guid: c1d61cd6c2d94d4468d55ce3d72542a7, type: 3}
       propertyPath: m_Name
@@ -113905,6 +114076,10 @@ PrefabInstance:
     - target: {fileID: 6107381988464860205, guid: c1d61cd6c2d94d4468d55ce3d72542a7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844966728533801464, guid: c1d61cd6c2d94d4468d55ce3d72542a7, type: 3}
+      propertyPath: m_Constraints
+      value: 112
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -114427,6 +114602,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5b2c93e462837249aa7b6ff074af1f7, type: 3}
+--- !u!1 &1992496920 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5296660257821851267, guid: 0631ef5e96377ef42bad450e8f11c1cb, type: 3}
+  m_PrefabInstance: {fileID: 987552302}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1996433073 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1699431744962240450, guid: a5b2c93e462837249aa7b6ff074af1f7, type: 3}
@@ -114440,6 +114620,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 159679984921551525, guid: bdaf91a4863acc14c8afc40792270c9f, type: 3}
+      propertyPath: ennemy.m_Bits
+      value: 4096
+      objectReference: {fileID: 0}
+    - target: {fileID: 924071696329102768, guid: bdaf91a4863acc14c8afc40792270c9f, type: 3}
+      propertyPath: unitSelectionSystem
+      value: 
+      objectReference: {fileID: 1992496920}
     - target: {fileID: 3906585370894803582, guid: bdaf91a4863acc14c8afc40792270c9f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -103.60826
@@ -114709,6 +114897,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Steelix Variant (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3366572382256304649, guid: 9231bf1cdec12db43a841d5aba9ebb4d, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 5710024997331129165, guid: 9231bf1cdec12db43a841d5aba9ebb4d, type: 3}
+      propertyPath: kingManager
+      value: 
+      objectReference: {fileID: 1682396362}
+    - target: {fileID: 5710024997331129165, guid: 9231bf1cdec12db43a841d5aba9ebb4d, type: 3}
+      propertyPath: UnitSelector
+      value: 
+      objectReference: {fileID: 1992496920}
     - target: {fileID: 7792967752862530299, guid: 9231bf1cdec12db43a841d5aba9ebb4d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -69.6
@@ -114988,16 +115188,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2769772758483273064, guid: 01150a1ce98bee446843ea32cfff78c8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2769772758483273064, guid: 01150a1ce98bee446843ea32cfff78c8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -43.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3240591441945342929, guid: 01150a1ce98bee446843ea32cfff78c8, type: 3}
       propertyPath: m_Name
       value: Courrousinge Enemy Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3656795580738383431, guid: 01150a1ce98bee446843ea32cfff78c8, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 8417979490389678013, guid: 01150a1ce98bee446843ea32cfff78c8, type: 3}
+      propertyPath: kingManager
+      value: 
+      objectReference: {fileID: 1682396362}
+    - target: {fileID: 8417979490389678013, guid: 01150a1ce98bee446843ea32cfff78c8, type: 3}
+      propertyPath: UnitSelector
+      value: 
+      objectReference: {fileID: 1992496920}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
